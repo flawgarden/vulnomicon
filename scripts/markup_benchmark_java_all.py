@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+import json
+import os
+import subprocess
+from pathlib import Path
+
+from bs4 import BeautifulSoup
+
+
+def parse_xml(xml_path):
+    with open(xml_path) as xmlfile:
+        data = xmlfile.read()
+        parsed_data = BeautifulSoup(data, "xml")
+        test_metadata = parsed_data.find("test-metadata")
+        category = test_metadata.find("category").string
+        test_number = test_metadata.find("test-number")
+        vulnerability = test_metadata.find("vulnerability").string
+        cwe = test_metadata.find("cwe").string
+        return test_number, vulnerability, cwe, category
+
+
+def lines_number(file_path):
+    command = "wc -l %s" % file_path
+    res = int(subprocess.check_output(args=command, shell=True).split()[0])
+    return res
+
+
+def convert(owasp_root_path_str, name):
+    sarif_data_out = {
+        "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+        "version": "2.1.0",
+        "runs": [{"tool": {"driver": {"name": name}}}],
+    }
+    results = []
+    owasp_root_path = Path(owasp_root_path_str)
+    xml_parent_path = owasp_root_path / "src/main/java/org/owasp/benchmark/testcode"
+    xml_parent_path_str = xml_parent_path.absolute().as_posix()
+    files = [f for f in os.listdir(xml_parent_path_str) if f.endswith(".xml")]
+    for f in files:
+        f_path = xml_parent_path / f
+        f_path = f_path.absolute().resolve()
+        f_path_str = f_path.as_posix()
+        f_name = f_path.stem
+        java_name = f_name + ".java"
+        java_file_path = xml_parent_path / java_name
+        _, vulnerability, cwe, category = parse_xml(f_path_str)
+        result = {}
+        if vulnerability == "true":
+            result["kind"] = "fail"
+        else:
+            result["kind"] = "pass"
+        result["message"] = {}
+        result["message"]["text"] = str(category)
+        result["ruleId"] = "CWE-" + str(cwe)
+        location = {
+            "physicalLocation": {
+                "artifactLocation": {
+                    "uri": java_file_path.relative_to(owasp_root_path_str).as_posix()
+                },
+            }
+        }
+        result["locations"] = []
+        result["locations"].append(location)
+        results.append(result)
+    sarif_data_out["runs"][0]["results"] = results
+    out_file = open(owasp_root_path_str + "/truth.sarif", "w")
+    json.dump(sarif_data_out, out_file, indent=2)
+
+
+def main():
+    parent = Path(__file__).resolve().parents[1]
+    convert((parent / "BenchmarkJava/").absolute().resolve().as_posix(),
+            "OWASP-BenchmarkJava-v1.2")
+    convert((parent / "BenchmarkJava-mutated/").absolute().resolve().as_posix(),
+            "flawgarden-BenchmarkJava-mutated-demo")
+
+
+if __name__ == "__main__":
+    main()
