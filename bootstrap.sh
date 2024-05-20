@@ -42,3 +42,4 @@ fi
 (cd $BASE_DIR/BenchmarkJava-mutated; mvn compile)
 (cd $BASE_DIR; ./scripts/markup_benchmark_java_all.py)
 (cd $BASE_DIR/reality-check; ./scripts/bootstrap.sh)
+(cd $BASE_DIR; ./scripts/bentoo.sh)
