@@ -59,3 +59,46 @@ For each language, the planned pipeline is as follows:
 1. Adapt some of the existing benchmarks for the language to `bentoo-sarif` to be later used for reference.
 2. Make a synthetic benchmark that covers all language features and exhibits differences in tools' analyses using mutational fuzzing as described above. Reference benchmarks will be used as initial seeds for the fuzzer.
 3. Use the CVE database entries for the given language to gather cases of the real-world benchmark and then audit it by hand to compile the real-world benchmark.
+
+## Evaluation results
+
+We have evaluated four tools (CodeQL, Semgrep, SonarQube, Snyk) on all three benchmarks.
+We have also evaluated Insider on `reality-check`.
+
+The results are as follows:
+
+### BenchmarkJava
+| Tool       | Precision  | Recall     | F1 score   |
+|------------|------------|------------|------------|
+| CodeQL     | 70.3%      | 100%       | 82.6%      |
+| Semgrep    | 69.2%      | 88.8%      | 77.8%      |
+| SonarQube  | 77.1%      | 43.4%      | 55.5%      |
+| Snyk       | 70.4%      | 96.5%      | 81.5%      |
+
+![](graphs/benchmark_java.svg?raw=true)
+
+### BenchmarkJava-mutated
+| Tool       | Precision  | Recall     | F1 score   |
+|------------|------------|------------|------------|
+| CodeQL     | 34.0%      | 94.1%      | 50.0%      |
+| Semgrep    | 33.3%      | 94.1%      | 49.2%      |
+| SonarQube  | 32.6%      | 100%       | 49.3%      |
+| Snyk       | 40.6%      | 76.5%      | 53.1%      |
+
+![](graphs/benchmark_java_mutated.svg?raw=true)
+
+
+### reality-check
+| Tool       | Precision  | Recall     | F1 score   |
+|------------|------------|------------|------------|
+| CodeQL     | 53.4%      | 13.9%      | 22.1%      |
+| Semgrep    | 55.5%      | 9.1%       | 15.6%      |
+| Insider    | 48.2%      | 8.5%       | 14.4%      |
+| SonarQube  | 56.0%      | 8.5%       | 14.7%      |
+| Snyk       | 57.1%      | 4.8%       | 8.9%       |
+
+![](graphs/benchmark_reality_check.svg?raw=true)
+
+### CWE findings distribution
+
+![](graphs/CWE.svg?raw=true)
