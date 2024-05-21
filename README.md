@@ -1,9 +1,9 @@
 # vulnomicon
 
-Vulnomicon is a meta-repository for different SAST tool benchmarks.
+**vulnomicon** is a meta-repository for different SAST tool benchmarks.
 
 Usually, benchmark datasets for SAST tools are either synthetic or real-world-based only.
-Vulnomicon contains both synthetic and real-world benchmarks.
+**vulnomicon** contains both synthetic and real-world benchmarks.
 
 Synthetic benchmarks are generated using mutational fuzzing.
 Existing benchmarks are used as initial seeds for the fuzzer. The fuzzer uses handwritten
@@ -54,7 +54,7 @@ If you want to tinker with what tools run on what benchmarks (e.g., to run your 
 please consult the [`bentoo` documentation](https://github.com/flawgarden/bentoo).
 
 ## Roadmap
-For now, vulnomicon contains benchmarks only for Java. We plan to add benchmarks for C#, Go, and Python.
+For now, **vulnomicon** contains benchmarks only for Java. We plan to add benchmarks for C#, Go, and Python.
 For each language, the planned pipeline is as follows:
 1. Adapt some of the existing benchmarks for the language to `bentoo-sarif` to be later used for reference.
 2. Make a synthetic benchmark that covers all language features and exhibits differences in tools' analyses using mutational fuzzing as described above. Reference benchmarks will be used as initial seeds for the fuzzer.
