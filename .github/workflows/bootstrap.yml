@@ -1,0 +1,33 @@
+name: Bootstrtap
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+
+jobs:
+  bootstrap:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install python requirements
+      run: pip install -r ./requirements.txt
+
+    - name: Install Java
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y -q --no-install-recommends \
+          git \
+          openjdk-11-jdk \
+          openjdk-11-jre-headless \
+          maven
+
+    - name: Bootstrap
+      run: |
+        ./bootstrap.sh --exit-on-error
+

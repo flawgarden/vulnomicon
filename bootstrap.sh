@@ -17,6 +17,19 @@ requireCommand python3
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 BASE_DIR="$(cd $SCRIPT_DIR && pwd)"
 
+EXIT_ON_ERROR="false"
+
+for OPT in $@; do
+  if [[ "$OPT" = *"--exit-on-error"* ]]; then
+      EXIT_ON_ERROR="true"
+      shift 1
+  fi
+done
+
+if [[ "$EXIT_ON_ERROR" = "true" ]]; then
+  set -e
+fi
+
 cd $BASE_DIR
 
 SCRIPT_JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
