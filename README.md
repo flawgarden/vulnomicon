@@ -31,7 +31,13 @@ As of today, it contains three submodules:
 2. `BenchmarkJavaMutated` - a synthetic Java benchmark generated using mutational fuzzing on the OWASP benchmark.
 3. `reality-check` - a collection of real-world vulnerabilities (and their fixes) for Java based on the CVE database.
 
-To set up all of the benchmarks locally, run `./bootstrap.sh`.
+To set up all of the benchmarks locally, install python requirements:
+
+```sh
+pip install -r requirements.txt
+```
+
+And then run `./bootstrap.sh`.
 
 The bootstrap script will:
 * Download, compile and provide ground truth files for `BenchmarkJava` and `BencmarkJava-mutated`.
