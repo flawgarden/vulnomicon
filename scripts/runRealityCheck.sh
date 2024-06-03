@@ -25,5 +25,5 @@ fi
 
 PATH=$PATH:$(pwd)
 
-bentoo template --tools tool_runners/tools.toml reality-check/benchmark > reality-check/benchmark/runs.toml
-bentoo bench --tools tool_runners/tools.toml --runs reality-check/benchmark/runs.toml --timeout 1200 reality-check-output
+bentoo template --tools tool_runners/tools_java.toml reality-check/benchmark > reality-check/benchmark/runs.toml
+bentoo bench --tools tool_runners/tools_java.toml --runs reality-check/benchmark/runs.toml --timeout 1200 reality-check-output

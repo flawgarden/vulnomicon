@@ -15,5 +15,5 @@ fi
 
 PATH=$PATH:$(pwd)
 
-bentoo template --tools tool_runners/tools.toml BenchmarkJava > BenchmarkJava/runs.toml
-bentoo bench --tools tool_runners/tools.toml --runs BenchmarkJava/runs.toml --timeout 1200 BenchmarkJava-output
+bentoo template --tools tool_runners/tools_java.toml BenchmarkJava > BenchmarkJava/runs.toml
+bentoo bench --tools tool_runners/tools_java.toml --runs BenchmarkJava/runs.toml --timeout 1200 BenchmarkJava-output
