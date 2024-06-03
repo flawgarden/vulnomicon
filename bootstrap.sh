@@ -11,6 +11,9 @@ requireCommand() {
 requireCommand git
 requireCommand docker
 requireCommand python3
+requireCommand unzip
+requireCommand mono
+requireCommand xbuild
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 BASE_DIR="$(cd $SCRIPT_DIR && pwd)"
@@ -40,4 +43,20 @@ cd $BASE_DIR
 (cd $BASE_DIR; ./scripts/bootstrap-BenchmarkJava-mutated.sh $BOOTSTRAP_OPTIONS)
 (cd $BASE_DIR; ./scripts/bootstrap-reality-check.sh $BOOTSTRAP_OPTIONS)
 
+if [ ! -d "JulietCSharp" ]; then
+  echo "Downloading JulietCSharp..."
+  curl -o JulietCSharp.zip "https://samate.nist.gov/SARD/downloads/test-suites/2020-08-01-juliet-test-suite-for-csharp-v1-3.zip"
+  julietsha = $(sha256sum juliet.zip)
+  if [ $julietsha -ne "2e6dbac4741fb020a0b1c2db69e98aed165987df2bd70bd51f7c8c5302c8e8f8" ]; then
+    echo "sha256 failed for the Juliet download!"
+    rm JulietCSharp.zip
+    exit 2
+  fi
+  unzip JulietCSharp.zip -d "JulietCSharp"
+  rm JulietCSharp.zip
+# fixing case-sensitive directory name
+  (cd JulietCSharp/src; mv "testcasesupport" "TestCaseSupport")
+fi
+
 (cd $BASE_DIR; ./scripts/bentoo.sh)
+(cd $BASE_DIR; ./scripts/markup_and_build_juliet.py)

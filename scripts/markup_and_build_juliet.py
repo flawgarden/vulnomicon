@@ -1,0 +1,118 @@
+#!/usr/bin/env python3
+import json
+import os
+import subprocess
+import re
+from pathlib import Path
+
+BAD_PART_BEGIN = "#if +\\(!OMITBAD\\)"
+PART_END = "#endif"
+GOOD_PART_BEGIN = "#if +\\(!OMITGOOD\\)"
+
+
+def matchWithRegex(regex, string):
+    return bool(re.match(regex, string))
+
+
+def getGoodAndBadParts(testPath):
+    bads = []
+    goods = []
+    begin = None
+    with open(testPath) as file:
+        i = 0
+        isGood = None
+        while line := file.readline():
+            i += 1
+
+            if not line:
+                continue
+
+            if matchWithRegex(BAD_PART_BEGIN, line):
+                begin = i
+                isGood = False
+            elif matchWithRegex(GOOD_PART_BEGIN, line):
+                begin = i
+                isGood = True
+            elif matchWithRegex(PART_END, line):
+                newPart = (begin, i)
+                if isGood: goods.append(newPart)
+                else: bads.append(newPart)
+                begin = None
+                isGood = None
+
+    return (goods, bads)
+
+
+def generateResult(startLine, endLine, testName, isVulnerable, cwe):
+    result = {}
+    result["kind"] = "fail" if isVulnerable else "pass"
+    result["message"] = {}
+    result["message"]["text"] = testName
+    result["ruleId"] = "CWE-" + str(cwe)
+    location = {
+        "physicalLocation": {
+            "artifactLocation": {
+                "uri": testName
+            },
+            "region": {
+                "startLine": startLine,
+                "endLine": endLine
+            }
+        }
+    }
+    result["locations"] = []
+    result["locations"].append(location)
+    return result
+
+
+def generateSarif(julietRootPath, testsPath, testFiles, cwe):
+    sarif_data_out = {
+        "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+        "version": "2.1.0",
+        "runs": [{"tool": {"driver": {"name": "JulietCSharp-1.3"}}}],
+    }
+    results = []
+    for testFile in testFiles:
+        testName = testFile.name
+        (goods, bads) = getGoodAndBadParts(testFile.path)
+        for good in goods:
+            results.append(generateResult(good[0], good[1], testName, False, cwe))
+        for bad in bads:
+            results.append(generateResult(bad[0], bad[1], testName, True, cwe))
+    sarif_data_out["runs"][0]["results"] = results
+    out_file = open(testsPath + "/truth.sarif", "w")
+    json.dump(sarif_data_out, out_file, indent=2)
+
+
+def collectInternal(julietRoot, curDirectory, buildProjects=False, cwe=None):
+    testFiles = []
+    if cwe is None and curDirectory.name[0:3] == "CWE":
+        # entered a directory containing CWE test entries; retrieving its number for sarif
+        cwe = re.findall(r"\d+", curDirectory.name)[0]
+    isProjectRoot = False
+    for fileEntry in os.scandir(curDirectory.path):
+        filePath = fileEntry.path
+        if fileEntry.is_dir():
+            collectInternal(julietRoot, fileEntry, buildProjects, cwe)
+        elif fileEntry.is_file():
+            _, extension = os.path.splitext(filePath)
+            if extension == ".sln":
+                isProjectRoot = True
+                if buildProjects:
+                    subprocess.run(["xbuild", filePath])
+            elif extension == ".cs" and fileEntry.name[0:3] == "CWE":
+                testFiles.append(fileEntry)
+    if isProjectRoot and len(testFiles) > 0:
+        generateSarif(julietRoot, curDirectory.path, testFiles, cwe)
+
+
+def main():
+    parent = Path(__file__).resolve().parents[1]
+    julietRoot = (parent / "JulietCSharp/src/testcases").absolute().resolve().as_posix()
+    for fileEntry in os.scandir(julietRoot):
+        if fileEntry.is_dir():
+            collectInternal(julietRoot, fileEntry)
+
+
+if __name__ == "__main__":
+    main()
