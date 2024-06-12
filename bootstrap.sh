@@ -56,6 +56,9 @@ if [ ! -d "JulietCSharp" ]; then
   rm JulietCSharp.zip
 # fixing case-sensitive directory name
   (cd JulietCSharp/src; mv "testcasesupport" "TestCaseSupport")
+# deleting previously needed temporary fix, see https://github.com/dotnet/runtime/issues/17471
+# as Mono improved since Juliet was made, it is no longer necessary
+  (cd JulietCSharp/lib; rm "System.Runtime.InteropServices.RuntimeInformation.dll")
 fi
 
 (cd $BASE_DIR; ./scripts/bentoo.sh)
