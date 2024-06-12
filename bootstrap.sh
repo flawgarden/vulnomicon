@@ -59,4 +59,5 @@ if [ ! -d "JulietCSharp" ]; then
 fi
 
 (cd $BASE_DIR; ./scripts/bentoo.sh)
+(cd $BASE_DIR; ./scripts/create_single_juliet_project.py)
 (cd $BASE_DIR; ./scripts/markup_and_build_juliet.py)
