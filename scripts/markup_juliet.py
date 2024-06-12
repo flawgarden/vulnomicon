@@ -46,8 +46,8 @@ def getGoodAndBadParts(testPath):
 def generateCWEResult(startLine, endLine, testName, isVulnerable, cwe):
     result = {}
     result["kind"] = "fail" if isVulnerable else "pass"
-    #result["message"] = {}
-    #result["message"]["text"] = testName
+    result["message"] = {}
+    result["message"]["text"] = testName
     result["ruleId"] = "CWE-" + str(cwe)
     location = {
         "physicalLocation": {
