@@ -59,5 +59,6 @@ if [ ! -d "JulietCSharp" ]; then
 fi
 
 (cd $BASE_DIR; ./scripts/bentoo.sh)
-(cd $BASE_DIR; ./scripts/create_single_juliet_project.py)
-(cd $BASE_DIR; ./scripts/markup_and_build_juliet.py)
+# the order is important so main Juliet sln will not be counted as a CWE
+(cd $BASE_DIR; ./scripts/markup_juliet.py)
+(cd $BASE_DIR/JulietCSharp; ../scripts/create_single_juliet_project.py)

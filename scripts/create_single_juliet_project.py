@@ -6,8 +6,8 @@
 
 import sys, os, shutil, glob, time, re
 
-# add parent directory to search path so we can use py_common
-sys.path.append("..")
+# add JulietCSharp directory to search path so we can use py_common
+sys.path.append("../JulietCSharp")
 
 import py_common
 import update_csharp_templates
@@ -106,12 +106,8 @@ def get_list_of_cwe_projects():
     cwd = os.getcwd()
 
     for dir in cwe_dirs:
+        # check if the CWE is split into subdirectories
         if 's01' in os.listdir(dir):
-            is_dir_split = True
-        else:
-            is_dir_split = False
-
-        if is_dir_split:
             # get the list of subdirectories
             cwe_sub_dirs = py_common.find_directories_in_dir(dir, "^s\d.*")
 
