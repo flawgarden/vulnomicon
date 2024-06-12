@@ -2,4 +2,10 @@ bentoo
 BenchmarkJava*
 reality-check*
 JulietCSharp*
-tool_runners
+sast-rules/
+tool_runners/
+
+.idea/
+venv/
+
+.DS_Store

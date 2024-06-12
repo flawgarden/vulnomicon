@@ -1,0 +1,45 @@
+name: "Run sast-rules python"
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'scripts/bootstrap-sast-rules.sh'
+      - 'scripts/run-sast-rules.sh'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'scripts/bootstrap-sast-rules.sh'
+      - 'scripts/run-sast-rules.sh'
+  workflow_dispatch:
+
+env:
+  BENTOO_SCRIPT: "./scripts/bentoo.sh"
+  BENCHMARK_NAME: "sast-rules"
+  RUN_BENCHMARK_SCRIPT: "./scripts/run-sast-rules.sh"
+  RUN_BENCHMARK_OUTPUT: "sast-rules-python-output"
+  BOOTSTRAP_SCRIPT: "./scripts/bootstrap-sast-rules.sh"
+
+jobs:
+  reference_run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install python requirements
+      run: pip install -r ./requirements.txt
+
+    - name: Bootstrap
+      run: |
+        ${{ env.BOOTSTRAP_SCRIPT }} --exit-on-error
+        ${{ env.BENTOO_SCRIPT }}
+
+    - name: Reference run
+      shell: bash
+      run: ${{ env.RUN_BENCHMARK_SCRIPT }}
+
+    - name: Archive output
+      uses: actions/upload-artifact@v4
+      with:
+        name: "${{ env.BENCHMARK_NAME }}-output"
+        path: ${{ env.RUN_BENCHMARK_OUTPUT }}
