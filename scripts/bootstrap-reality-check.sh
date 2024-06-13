@@ -15,12 +15,12 @@ requireCommand mvn
 requireCommand python3
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-BASE_DIR="$(cd $SCRIPT_DIR/../ && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR"/../ && pwd)"
 
 EXIT_ON_ERROR="false"
 UPDATE_BENCHMARKS="false"
 
-for OPT in $@; do
+for OPT in "$@"; do
   if [[ "$OPT" = *"--exit-on-error"* ]]; then
       EXIT_ON_ERROR="true"
       shift 1
@@ -35,8 +35,7 @@ if [[ "$EXIT_ON_ERROR" = "true" ]]; then
   set -e
 fi
 
-cd $BASE_DIR
-
+cd "$BASE_DIR"
 
 if [ ! -d "reality-check" ]; then
   git clone https://github.com/flawgarden/reality-check.git
@@ -51,4 +50,4 @@ fi
   fi
 )
 
-(cd $BASE_DIR/reality-check; ./scripts/bootstrap.sh)
+(cd "$BASE_DIR"/reality-check; ./scripts/bootstrap.sh)
