@@ -9,11 +9,11 @@ import re
 import shutil
 import sys
 
-import py_common
-import update_csharp_templates
-
 # add JulietCSharp directory to search path so we can use py_common
 sys.path.append("../JulietCSharp")
+
+import py_common
+import update_csharp_templates
 
 
 def copy_and_update_sln_template(sln_file_name, directory):
