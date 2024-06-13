@@ -11,7 +11,6 @@ requireCommand() {
 requireCommand docker
 requireCommand python3
 requireCommand unzip
-requireCommand mono
 requireCommand xbuild
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
@@ -58,3 +57,6 @@ fi
 # the order is important so main Juliet sln will not be counted as a CWE
 (cd $BASE_DIR; ./scripts/markup_juliet.py)
 (cd $BASE_DIR/JulietCSharp; ../scripts/create_single_juliet_project.py)
+
+# specifying mono-xbuild as the compiling tool of the project
+(cd $BASE_DIR/JulietCSharp; cp ../scripts/buildForJuliet.sh build.sh)

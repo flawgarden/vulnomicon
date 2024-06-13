@@ -16,4 +16,4 @@ fi
 PATH=$PATH:$(pwd)
 
 bentoo template --tools tool_runners/tools_csharp.toml JulietCSharp > JulietCSharp/runs.toml
-bentoo bench --tools tool_runners/tools_csharp.toml --runs JulietCSharp/runs.toml --timeout 4800 JulietCSharp-output
+bentoo bench --tools tool_runners/tools_csharp.toml --runs JulietCSharp/runs.toml --timeout 1200 JulietCSharp-output
