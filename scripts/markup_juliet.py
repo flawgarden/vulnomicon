@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
+
 import json
 import os
-import subprocess
 import re
-from pathlib import Path
 
 BAD_PART_BEGIN = "#if +\\(!OMITBAD\\)"
 PART_END = "#endif"
@@ -35,8 +34,10 @@ def getGoodAndBadParts(testPath):
                 isGood = True
             elif matchWithRegex(PART_END, line):
                 newPart = (begin, i)
-                if isGood: goods.append(newPart)
-                else: bads.append(newPart)
+                if isGood:
+                    goods.append(newPart)
+                else:
+                    bads.append(newPart)
                 begin = None
                 isGood = None
 
@@ -77,9 +78,11 @@ def generateSarif(julietRootPath, testFilesWithCWE):
         testRelativePath = testFile.path[len("./JulietCSharp/"):]
         (goods, bads) = getGoodAndBadParts(testFile.path)
         for good in goods:
-            results.append(generateCWEResult(good[0], good[1], testRelativePath, False, cwe))
+            results.append(generateCWEResult(
+                good[0], good[1], testRelativePath, False, cwe))
         for bad in bads:
-            results.append(generateCWEResult(bad[0], bad[1], testRelativePath, True, cwe))
+            results.append(generateCWEResult(
+                bad[0], bad[1], testRelativePath, True, cwe))
     sarif_data_out["runs"][0]["results"] = results
     out_file = open(julietRootPath + "/truth.sarif", "w")
     json.dump(sarif_data_out, out_file, indent=2)
@@ -100,7 +103,8 @@ def collectCWEsInDirectory(curDirectory, cwe=None):
                 _, extension = os.path.splitext(filePath)
                 if extension == ".cs" and fileEntry.name[0:3] == "CWE":
                     if cwe is None:
-                        print(".cs file found [" + fileEntry.name + "] before the CWE was set!")
+                        print(
+                            ".cs file found [" + fileEntry.name + "] before the CWE was set!")
                         exit(1)
                     testFilesWithCWE.append((fileEntry, cwe))
     return testFilesWithCWE
@@ -109,10 +113,10 @@ def collectCWEsInDirectory(curDirectory, cwe=None):
 def main():
     julietDirectory = None
     with os.scandir(".") as iter:
-        for entry in os.scandir("."):
+        for entry in iter:
             if entry.is_dir() and entry.name == "JulietCSharp":
                 julietDirectory = entry
-    
+
     CWEFiles = collectCWEsInDirectory(julietDirectory)
     generateSarif(julietDirectory.path, CWEFiles)
 
