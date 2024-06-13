@@ -27,6 +27,14 @@ jobs:
           openjdk-11-jre-headless \
           maven
 
+    - name: Install tools needed for JulietCSharp download and run
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y -q --no-install-recommends \
+          unzip \
+          mono \
+          xbuild
+
     - name: Bootstrap
       run: |
         export VULNOMICON_JAVA_HOME_11=/usr/lib/jvm/java-11-openjdk-amd64/
