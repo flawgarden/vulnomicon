@@ -1,4 +1,4 @@
-name: Bootstrtap
+name: Bootstrap
 
 on:
   push:
@@ -26,6 +26,13 @@ jobs:
           openjdk-11-jdk \
           openjdk-11-jre-headless \
           maven
+
+    - name: Install tools needed for JulietCSharp download and run
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y -q --no-install-recommends \
+          unzip \
+          mono-xbuild
 
     - name: Bootstrap
       run: |
