@@ -15,12 +15,12 @@ requireCommand mvn
 requireCommand python3
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-BASE_DIR="$(cd $SCRIPT_DIR/../ && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR"/../ && pwd)"
 
 EXIT_ON_ERROR="false"
 UPDATE_BENCHMARKS="false"
 
-for OPT in $@; do
+for OPT in "$@"; do
   if [[ "$OPT" = *"--exit-on-error"* ]]; then
       EXIT_ON_ERROR="true"
       shift 1
@@ -35,7 +35,7 @@ if [[ "$EXIT_ON_ERROR" = "true" ]]; then
   set -e
 fi
 
-cd $BASE_DIR
+cd "$BASE_DIR"
 
 if [[ ! -v VULNOMICON_JAVA_HOME_11 ]]; then
     echo "VULNOMICON_JAVA_HOME_11 is not set"
@@ -62,5 +62,5 @@ fi
   fi
 )
 
-(cd $BASE_DIR/BenchmarkJava-mutated; mvn compile)
-(cd $BASE_DIR; ./scripts/markup_benchmark_java_mutated.py)
+(cd "$BASE_DIR"/BenchmarkJava-mutated; mvn compile)
+(cd "$BASE_DIR"; ./scripts/markup_benchmark_java_mutated.py)

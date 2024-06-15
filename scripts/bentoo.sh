@@ -1,9 +1,9 @@
 #!/bin/bash
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-BASE_DIR="$(cd $SCRIPT_DIR/.. && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR"/.. && pwd)"
 
-cd $BASE_DIR;
+cd "$BASE_DIR" || exit;
 
 wget https://github.com/flawgarden/bentoo/releases/download/latest/bentoo.tar.gz
 wget https://github.com/flawgarden/bentoo/releases/download/latest/tool_runners.tar.gz

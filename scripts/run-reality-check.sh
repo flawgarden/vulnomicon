@@ -1,9 +1,9 @@
 #!/bin/bash
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-BASE_DIR="$(cd $SCRIPT_DIR/.. && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR"/.. && pwd)"
 
-cd $BASE_DIR;
+cd "$BASE_DIR" || exit;
 
 if [[ ! -v VULNOMICON_JAVA_HOME_8 ]]; then
     echo "VULNOMICON_JAVA_HOME_8 is not set"
@@ -22,7 +22,7 @@ echo "Running all avaiable tools on it will take about 24 hours"
 echo -n "Proceed (yes/no)? "
 read -r proceed
 
-if [ ! $proceed = "yes" ]; then
+if [ ! "$proceed" = "yes" ]; then
     echo "Exiting"
     exit 0
 fi
