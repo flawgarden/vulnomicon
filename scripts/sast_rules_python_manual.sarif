@@ -1,0 +1,535 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "sast-rules-python"
+        }
+      },
+      "results": [
+        {
+          "kind": "pass",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "crypto/rule-crypto-encrypt-dsa-rsa.py"
+                },
+                "region": {
+                  "startLine": 16,
+                  "endLine": 17
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "crypto/rule-crypto-encrypt-dsa-rsa.py"
+                },
+                "region": {
+                  "startLine": 27,
+                  "endLine": 28
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "crypto/rule-crypto-encrypt-dsa-rsa.py"
+                },
+                "region": {
+                  "startLine": 30,
+                  "endLine": 32
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "crypto/rule-crypto-encrypt-dsa-rsa.py"
+                },
+                "region": {
+                  "startLine": 40,
+                  "endLine": 41
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "crypto/rule-crypto-encrypt-dsa-rsa.py"
+                },
+                "region": {
+                  "startLine": 43,
+                  "endLine": 45
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "crypto/rule-crypto-encrypt-dsa-rsa.py"
+                },
+                "region": {
+                  "startLine": 57,
+                  "endLine": 58
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "crypto/rule-crypto-encrypt-dsa-rsa.py"
+                },
+                "region": {
+                  "startLine": 60,
+                  "endLine": 62
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "crypto/rule-crypto-encrypt-ec.py"
+                },
+                "region": {
+                  "startLine": 9,
+                  "endLine": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "crypto/rule-crypto-encrypt-ec.py"
+                },
+                "region": {
+                  "startLine": 13,
+                  "endLine": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "crypto/rule-crypto-encrypt-ec.py"
+                },
+                "region": {
+                  "startLine": 18,
+                  "endLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "crypto/rule-crypto-encrypt-ec.py"
+                },
+                "region": {
+                  "startLine": 23,
+                  "endLine": 24
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ssl/rule-ssl-with-bad-version.py"
+                },
+                "region": {
+                  "startLine": 44,
+                  "endLine": 44
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ssl/rule-ssl-with-bad-version.py"
+                },
+                "region": {
+                  "startLine": 48,
+                  "endLine": 48
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ssl/rule-ssl-with-bad-version.py"
+                },
+                "region": {
+                  "startLine": 52,
+                  "endLine": 52
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-326",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "ssl/rule-ssl-with-bad-version.py"
+                },
+                "region": {
+                  "startLine": 57,
+                  "endLine": 57
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-319",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "snmp/rule-snmp-weak-cryptography.py"
+                },
+                "region": {
+                  "startLine": 20,
+                  "endLine": 22
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-116",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "escaping/rule-jinja2-autoescape-false.py"
+                },
+                "region": {
+                  "startLine": 18,
+                  "endLine": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-116",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "escaping/rule-jinja2-autoescape-false.py"
+                },
+                "region": {
+                  "startLine": 23,
+                  "endLine": 24
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-377",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tmpdir/rule-hardcodedtmp.py"
+                },
+                "region": {
+                  "startLine": 6,
+                  "endLine": 6
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-377",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tmpdir/rule-hardcodedtmp.py"
+                },
+                "region": {
+                  "startLine": 10,
+                  "endLine": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-377",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "tmpdir/rule-hardcodedtmp.py"
+                },
+                "region": {
+                  "startLine": 14,
+                  "endLine": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "exec/rule-subprocess-call.py"
+                },
+                "region": {
+                  "startLine": 25,
+                  "endLine": 27
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "exec/rule-subprocess-popen-shell-true.py"
+                },
+                "region": {
+                  "startLine": 45,
+                  "endLine": 47
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-95",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "eval/rule-eval.py"
+                },
+                "region": {
+                  "startLine": 88,
+                  "endLine": 90
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-95",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "eval/rule-eval.py"
+                },
+                "region": {
+                  "startLine": 113,
+                  "endLine": 113
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "security"
+          },
+          "ruleId": "CWE-95",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "eval/rule-eval.py"
+                },
+                "region": {
+                  "startLine": 147,
+                  "endLine": 147
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
