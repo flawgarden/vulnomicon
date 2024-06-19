@@ -5,7 +5,7 @@
     {
       "tool": {
         "driver": {
-          "name": "sast-rules"
+          "name": "sast-rules-python"
         }
       },
       "results": [
