@@ -240,7 +240,7 @@ def markup(bench_path, results):
 def main():
     vulnomicon_path = Path(__file__).resolve().parents[1]
     sast_rules_path = vulnomicon_path / "sast-rules" / "python"
-    manual_markup_path = vulnomicon_path / "scripts" / "sast_rules_manual.sarif"
+    manual_markup_path = vulnomicon_path / "scripts" / "sast_rules_python_manual.sarif"
 
     with open(manual_markup_path, "r") as manual_markup_f:
         manual_markup = json.load(manual_markup_f)

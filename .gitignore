@@ -4,8 +4,3 @@ reality-check*
 JulietCSharp*
 sast-rules/
 tool_runners/
-
-.idea/
-venv/
-
-.DS_Store
