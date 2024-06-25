@@ -4,21 +4,21 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'scripts/bootstrap-BenchmarkJava.sh'
-      - 'scripts/run-BenchmarkJava.sh'
+      - 'scripts/benchmarks/BenchmarkJava/bootstrap.sh'
+      - 'scripts/benchmarks/BenchmarkJava/run.sh'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'scripts/bootstrap-BenchmarkJava.sh'
-      - 'scripts/run-BenchmarkJava.sh'
+      - 'scripts/benchmarks/BenchmarkJava/bootstrap.sh'
+      - 'scripts/benchmarks/BenchmarkJava/run.sh'
   workflow_dispatch:
 
 env:
   BENTOO_SCRIPT: "./scripts/bentoo.sh"
   BENCHMARK_NAME: "BenchmarkJava"
-  RUN_BENCHMARK_SCRIPT: "./scripts/run-BenchmarkJava.sh"
+  RUN_BENCHMARK_SCRIPT: "./scripts/benchmarks/BenchmarkJava/run.sh"
   RUN_BENCHMARK_OUTPUT: "BenchmarkJava-output"
-  BOOTSTRAP_SCRIPT: "./scripts/bootstrap-BenchmarkJava.sh"
+  BOOTSTRAP_SCRIPT: "./scripts/benchmarks/BenchmarkJava/bootstrap.sh"
 
 jobs:
   reference_run:

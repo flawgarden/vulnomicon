@@ -2,6 +2,7 @@
 import json
 import os
 import subprocess
+import sys
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -68,11 +69,9 @@ def convert(owasp_root_path_str, name):
 
 
 def main():
-    parent = Path(__file__).resolve().parents[1]
-    convert((parent / "BenchmarkJava/").absolute().resolve().as_posix(),
-            "OWASP-BenchmarkJava-v1.2")
-    convert((parent / "BenchmarkJava-mutated/").absolute().resolve().as_posix(),
-            "flawgarden-BenchmarkJava-mutated-demo")
+    benchmark_path = Path(sys.argv[1]).absolute().resolve().as_posix()
+    benchmark_name = sys.argv[2]
+    convert(benchmark_path, benchmark_name)
 
 
 if __name__ == "__main__":

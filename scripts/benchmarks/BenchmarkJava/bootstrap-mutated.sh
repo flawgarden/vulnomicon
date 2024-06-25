@@ -15,7 +15,7 @@ requireCommand mvn
 requireCommand python3
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-BASE_DIR="$(cd "$SCRIPT_DIR"/../ && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR"/../../../ && pwd)"
 
 EXIT_ON_ERROR="false"
 UPDATE_BENCHMARKS="false"
@@ -49,18 +49,18 @@ fi
 
 export JAVA_HOME="${VULNOMICON_JAVA_HOME_11}"
 
-if [ ! -d "BenchmarkJava" ]; then
-  git clone https://github.com/OWASP-Benchmark/BenchmarkJava.git
+if [ ! -d "BenchmarkJava-mutated" ]; then
+  git clone https://github.com/flawgarden/BenchmarkJava-mutated.git
 fi
 (
-  cd BenchmarkJava;
+  cd BenchmarkJava-mutated;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard d6a3e016b9239c486f3fe1bf2af2bf3e7b01fa56
+    git reset --hard ac71f3701a4775819935aac4243939f11aac54e7
   else
     git pull
   fi
 )
 
-(cd "$BASE_DIR"/BenchmarkJava; mvn compile)
-(cd "$BASE_DIR"; ./scripts/markup_benchmark_java_vanilla.py)
+(cd "$BASE_DIR"/BenchmarkJava-mutated; mvn compile)
+(cd "$BASE_DIR"; ./scripts/benchmarks/BenchmarkJava/markup.py "BenchmarkJava-mutated" "flawgarden-BenchmarkJava-mutated-demo")
