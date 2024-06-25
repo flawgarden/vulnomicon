@@ -13,7 +13,7 @@ requireCommand docker
 requireCommand python3
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-BASE_DIR="$(cd "$SCRIPT_DIR"/../ && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR"/../../../ && pwd)"
 
 EXIT_ON_ERROR="false"
 UPDATE_BENCHMARKS="false"
@@ -48,4 +48,4 @@ fi
   fi
 )
 
-(cd "$BASE_DIR"; ./scripts/markup_sast_rules_python.py)
+(cd "$BASE_DIR"; ./scripts/benchmarks/sast-rules/python/markup.py "sast-rules/python")

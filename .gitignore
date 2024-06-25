@@ -2,5 +2,5 @@ bentoo
 BenchmarkJava*
 reality-check*
 JulietCSharp*
-sast-rules*
+/sast-rules*
 tool_runners/

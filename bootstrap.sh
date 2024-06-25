@@ -42,6 +42,6 @@ cd "$BASE_DIR"
 (cd "$BASE_DIR"; ./scripts/bootstrap-BenchmarkJava-mutated.sh "$BOOTSTRAP_OPTIONS")
 (cd "$BASE_DIR"; ./scripts/bootstrap-reality-check.sh "$BOOTSTRAP_OPTIONS")
 (cd "$BASE_DIR"; ./scripts/bootstrap-JulietCSharp.sh "$BOOTSTRAP_OPTIONS")
-(cd "$BASE_DIR"; ./scripts/bootstrap-sast-rules.sh "$BOOTSTRAP_OPTIONS")
+(cd "$BASE_DIR"; ./scripts/benchmarks/sast-rules/bootstrap.sh "$BOOTSTRAP_OPTIONS")
 
 (cd "$BASE_DIR"; ./scripts/bentoo.sh)

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 import itertools
@@ -238,9 +239,8 @@ def markup(bench_path, results):
 
 
 def main():
-    vulnomicon_path = Path(__file__).resolve().parents[1]
-    sast_rules_path = vulnomicon_path / "sast-rules" / "python"
-    manual_markup_path = vulnomicon_path / "scripts" / "sast_rules_python_manual.sarif"
+    manual_markup_path = Path(__file__).resolve().parents[0] / "manual.sarif"
+    sast_rules_path = Path(sys.argv[1])
 
     with open(manual_markup_path, "r") as manual_markup_f:
         manual_markup = json.load(manual_markup_f)
