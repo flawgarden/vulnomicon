@@ -4,21 +4,21 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'scripts/bootstrap-JulietCSharp.sh'
-      - 'scripts/run-JulietCSharp.sh'
+      - 'scripts/benchmarks/Juliet/csharp/bootstrap.sh'
+      - 'scripts/benchmarks/Juliet/csharp/run.sh'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'scripts/bootstrap-JulietCSharp.sh'
-      - 'scripts/run-JulietCSharp.sh'
+      - 'scripts/benchmarks/Juliet/csharp/bootstrap.sh'
+      - 'scripts/benchmarks/Juliet/csharp/run.sh'
   workflow_dispatch:
 
 env:
   BENTOO_SCRIPT: "./scripts/bentoo.sh"
   BENCHMARK_NAME: "JulietCSharp"
-  RUN_BENCHMARK_SCRIPT: "./scripts/run-JulietCSharp.sh"
+  RUN_BENCHMARK_SCRIPT: "./scripts/benchmarks/Juliet/csharp/run.sh"
   RUN_BENCHMARK_OUTPUT: "JulietCSharp-output"
-  BOOTSTRAP_SCRIPT: "./scripts/bootstrap-JulietCSharp.sh"
+  BOOTSTRAP_SCRIPT: "./scripts/benchmarks/Juliet/csharp/bootstrap.sh"
 
 jobs:
   reference_run:

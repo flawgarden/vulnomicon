@@ -14,7 +14,7 @@ requireCommand unzip
 requireCommand xbuild
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-BASE_DIR="$(cd "$SCRIPT_DIR"/../ && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR"/../../../../ && pwd)"
 
 EXIT_ON_ERROR="false"
 UPDATE_BENCHMARKS="false"
@@ -57,8 +57,8 @@ if [ ! -d "JulietCSharp" ]; then
 fi
 
 # the order is important so main Juliet sln will not be counted as a CWE
-(cd "$BASE_DIR"; ./scripts/markup_juliet.py)
-(cd "$BASE_DIR"/JulietCSharp; ../scripts/create_single_juliet_project.py)
+(cd "$BASE_DIR"; ./scripts/benchmarks/Juliet/csharp/markup.py)
+(cd "$BASE_DIR"/JulietCSharp; ../scripts/benchmarks/Juliet/csharp/create_single_project.py)
 
 # specifying mono-xbuild as the compiling tool of the project
-(cd "$BASE_DIR"/JulietCSharp; cp ../scripts/buildForJuliet.sh build.sh)
+(cd "$BASE_DIR"/JulietCSharp; cp ../scripts/benchmarks/Juliet/csharp/buildForJuliet.sh build.sh)
