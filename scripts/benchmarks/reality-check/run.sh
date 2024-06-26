@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-BASE_DIR="$(cd "$SCRIPT_DIR"/.. && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR"/../../../ && pwd)"
 
 cd "$BASE_DIR" || exit;
 
@@ -18,7 +18,7 @@ fi
 export JAVA_HOME="${VULNOMICON_JAVA_HOME_8}"
 
 echo "Warning: reality-check is a big benchmark"
-echo "Running all avaiable tools on it will take about 24 hours"
+echo "Running all available tools on it will take about 24 hours"
 echo -n "Proceed (yes/no)? "
 read -r proceed
 

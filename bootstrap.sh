@@ -40,7 +40,7 @@ cd "$BASE_DIR"
 
 (cd "$BASE_DIR"; ./scripts/benchmarks/BenchmarkJava/bootstrap.sh "$BOOTSTRAP_OPTIONS")
 (cd "$BASE_DIR"; ./scripts/benchmarks/BenchmarkJava/bootstrap-mutated.sh "$BOOTSTRAP_OPTIONS")
-(cd "$BASE_DIR"; ./scripts/bootstrap-reality-check.sh "$BOOTSTRAP_OPTIONS")
+(cd "$BASE_DIR"; ./scripts/benchmarks/reality-check/bootstrap.sh "$BOOTSTRAP_OPTIONS")
 (cd "$BASE_DIR"; ./scripts/benchmarks/Juliet/csharp/bootstrap.sh "$BOOTSTRAP_OPTIONS")
 (cd "$BASE_DIR"; ./scripts/benchmarks/sast-rules/bootstrap.sh "$BOOTSTRAP_OPTIONS")
 
