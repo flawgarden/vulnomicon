@@ -39,9 +39,9 @@ cd "$BASE_DIR"
 if [ ! -d "JulietCSharp" ]; then
   echo "Downloading JulietCSharp..."
   curl -o JulietCSharp.zip "https://samate.nist.gov/SARD/downloads/test-suites/2020-08-01-juliet-test-suite-for-csharp-v1-3.zip"
-  julietsha=$(sha256sum JulietCSharp.zip)
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    if [ "$julietsha" -ne "2e6dbac4741fb020a0b1c2db69e98aed165987df2bd70bd51f7c8c5302c8e8f8" ]; then
+    EXPECTED_SHA256SUM="2e6dbac4741fb020a0b1c2db69e98aed165987df2bd70bd51f7c8c5302c8e8f8"
+    if ! echo "${EXPECTED_SHA256SUM}  JulietCSharp.zip" | sha256sum --check --status; then
       echo "sha256 failed for the Juliet download!"
       rm JulietCSharp.zip
       exit 2
