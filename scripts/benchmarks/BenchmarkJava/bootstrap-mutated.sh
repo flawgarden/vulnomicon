@@ -15,7 +15,7 @@ requireCommand mvn
 requireCommand python3
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-BASE_DIR="$(cd "$SCRIPT_DIR"/../ && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR"/../../../ && pwd)"
 
 EXIT_ON_ERROR="false"
 UPDATE_BENCHMARKS="false"
@@ -63,4 +63,4 @@ fi
 )
 
 (cd "$BASE_DIR"/BenchmarkJava-mutated; mvn compile)
-(cd "$BASE_DIR"; ./scripts/markup_benchmark_java_mutated.py)
+(cd "$BASE_DIR"; ./scripts/benchmarks/BenchmarkJava/markup.py "BenchmarkJava-mutated" "flawgarden-BenchmarkJava-mutated-demo")

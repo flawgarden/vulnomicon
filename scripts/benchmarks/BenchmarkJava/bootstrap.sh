@@ -15,7 +15,7 @@ requireCommand mvn
 requireCommand python3
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-BASE_DIR="$(cd "$SCRIPT_DIR"/../ && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR"/../../../ && pwd)"
 
 EXIT_ON_ERROR="false"
 UPDATE_BENCHMARKS="false"
@@ -37,17 +37,30 @@ fi
 
 cd "$BASE_DIR"
 
-if [ ! -d "reality-check" ]; then
-  git clone https://github.com/flawgarden/reality-check.git
+if [[ ! -v VULNOMICON_JAVA_HOME_11 ]]; then
+    echo "VULNOMICON_JAVA_HOME_11 is not set"
+    exit 1
+elif [[ -z "${VULNOMICON_JAVA_HOME_11}" ]]; then
+    echo "VULNOMICON_JAVA_HOME_11 is set to the empty string"
+    exit 1
+else
+    echo "VULNOMICON_JAVA_HOME_11 has the value: ${VULNOMICON_JAVA_HOME_11}"
+fi
+
+export JAVA_HOME="${VULNOMICON_JAVA_HOME_11}"
+
+if [ ! -d "BenchmarkJava" ]; then
+  git clone https://github.com/OWASP-Benchmark/BenchmarkJava.git
 fi
 (
-  cd reality-check;
+  cd BenchmarkJava;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard 1feceb93f505ade1ebed3ecf0f4bb3db514f6670
+    git reset --hard d6a3e016b9239c486f3fe1bf2af2bf3e7b01fa56
   else
     git pull
   fi
 )
 
-(cd "$BASE_DIR"/reality-check; ./scripts/bootstrap.sh)
+(cd "$BASE_DIR"/BenchmarkJava; mvn compile)
+(cd "$BASE_DIR"; ./scripts/benchmarks/BenchmarkJava/markup.py "BenchmarkJava" "OWASP-BenchmarkJava-v1.2")

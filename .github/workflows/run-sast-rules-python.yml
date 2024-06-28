@@ -4,21 +4,21 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'scripts/bootstrap-sast-rules.sh'
-      - 'scripts/run-sast-rules-python.sh'
+      - 'scripts/benchmarks/sast-rules/bootstrap.sh'
+      - 'scripts/benchmarks/sast-rules/python/run.sh'
   pull_request:
     branches: [ "main" ]
     paths:
-      - 'scripts/bootstrap-sast-rules.sh'
-      - 'scripts/run-sast-rules-python.sh'
+      - 'scripts/benchmarks/sast-rules/bootstrap.sh'
+      - 'scripts/benchmarks/sast-rules/python/run.sh'
   workflow_dispatch:
 
 env:
   BENTOO_SCRIPT: "./scripts/bentoo.sh"
   BENCHMARK_NAME: "sast-rules-python"
-  RUN_BENCHMARK_SCRIPT: "./scripts/run-sast-rules-python.sh"
+  RUN_BENCHMARK_SCRIPT: "./scripts/benchmarks/sast-rules/python/run.sh"
   RUN_BENCHMARK_OUTPUT: "sast-rules-python-output"
-  BOOTSTRAP_SCRIPT: "./scripts/bootstrap-sast-rules.sh"
+  BOOTSTRAP_SCRIPT: "./scripts/benchmarks/sast-rules/bootstrap.sh"
 
 jobs:
   reference_run:

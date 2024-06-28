@@ -14,7 +14,7 @@ requireCommand unzip
 requireCommand xbuild
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-BASE_DIR="$(cd "$SCRIPT_DIR"/../ && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR"/../../../../ && pwd)"
 
 EXIT_ON_ERROR="false"
 UPDATE_BENCHMARKS="false"
@@ -39,9 +39,9 @@ cd "$BASE_DIR"
 if [ ! -d "JulietCSharp" ]; then
   echo "Downloading JulietCSharp..."
   curl -o JulietCSharp.zip "https://samate.nist.gov/SARD/downloads/test-suites/2020-08-01-juliet-test-suite-for-csharp-v1-3.zip"
-  julietsha=$(sha256sum JulietCSharp.zip)
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    if [ "$julietsha" -ne "2e6dbac4741fb020a0b1c2db69e98aed165987df2bd70bd51f7c8c5302c8e8f8" ]; then
+    EXPECTED_SHA256SUM="2e6dbac4741fb020a0b1c2db69e98aed165987df2bd70bd51f7c8c5302c8e8f8"
+    if ! echo "${EXPECTED_SHA256SUM}  JulietCSharp.zip" | sha256sum --check --status; then
       echo "sha256 failed for the Juliet download!"
       rm JulietCSharp.zip
       exit 2
@@ -57,8 +57,8 @@ if [ ! -d "JulietCSharp" ]; then
 fi
 
 # the order is important so main Juliet sln will not be counted as a CWE
-(cd "$BASE_DIR"; ./scripts/markup_juliet.py)
-(cd "$BASE_DIR"/JulietCSharp; ../scripts/create_single_juliet_project.py)
+(cd "$BASE_DIR"; ./scripts/benchmarks/Juliet/csharp/markup.py)
+(cd "$BASE_DIR"/JulietCSharp; ../scripts/benchmarks/Juliet/csharp/create_single_project.py)
 
 # specifying mono-xbuild as the compiling tool of the project
-(cd "$BASE_DIR"/JulietCSharp; cp ../scripts/buildForJuliet.sh build.sh)
+(cd "$BASE_DIR"/JulietCSharp; cp ../scripts/benchmarks/Juliet/csharp/buildForJuliet.sh build.sh)

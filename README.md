@@ -50,9 +50,9 @@ The bootstrap script will:
 For reference, the runner scripts downloaded will use dockerized versions of popular tools (`CodeQL`, `Semgrep`, etc.).
 
 After the bootstrapping is complete, you can run reference tools on the benchmarks by executing the following scripts:
-* `scripts/run-BenchmarkJava.sh` - to run the tools on `BenchmarkJava`
-* `scripts/run-BenchmarkJava-mutated.sh` - to run the tools on `BenchmarkJava-mutated`
-* `scripts/run-reality-check.sh` - to run the tools on `reality-check` (might take ~24 hours on an average machine)
+* `scripts/benchmarks/BenchmarkJava/run.sh` - to run the tools on `BenchmarkJava`
+* `scripts/benchmarks/BenchmarkJava/run-mutated.sh` - to run the tools on `BenchmarkJava-mutated`
+* `scripts/benchmarks/reality-check/run.sh` - to run the tools on `reality-check` (might take ~24 hours on an average machine)
 
 The run results will accordingly appear in the `BenchmarkJava-output`, `BenchmarkJava-mutated-output` and `reality-check-output` directories.
 
