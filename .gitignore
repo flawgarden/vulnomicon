@@ -1,6 +1,6 @@
-bentoo
+/bentoo
 /BenchmarkJava*
 /reality-check*
-JulietCSharp*
+/JulietCSharp*
 /sast-rules*
-tool_runners/
+/tool_runners/
