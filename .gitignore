@@ -2,5 +2,6 @@
 /BenchmarkJava*
 /reality-check*
 /JulietCSharp*
+/JulietJava*
 /sast-rules*
 /tool_runners/
