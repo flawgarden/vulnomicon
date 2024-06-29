@@ -56,9 +56,9 @@ def determineEvent(line):
         event = event | Event.GoodPartBegan
     if isBadPartBegin(line):
         event = event | Event.BadPartBegan
-    if bracketNum <= 1 and "{" in line:
+    if openBrackets == 1:
         event = event | Event.ScopeBegan
-    if bracketNum <= 1 and "}" in line:
+    if closeBracekts == 1:
         event = event | Event.ScopeEnded
 
     return event
