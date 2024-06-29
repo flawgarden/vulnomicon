@@ -44,7 +44,7 @@ if [ ! -d "JulietJava" ]; then
     EXPECTED_SHA256SUM="d985f4177c2bcd7b03455a05c1c8f2e755f55c9eb250accd052f05f877347e60"
     if ! echo "${EXPECTED_SHA256SUM}  JulietJava.zip" | sha256sum --check --status; then
       echo "sha256 failed for the Juliet download!"
-      rm JulietCSharp.zip
+      rm JulietJava.zip
       exit 2
     fi
   fi
