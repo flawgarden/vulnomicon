@@ -13,9 +13,10 @@ requireCommand docker
 requireCommand python3
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-BASE_DIR="$(cd "$SCRIPT_DIR" && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR"/../../../ && pwd)"
 
 EXIT_ON_ERROR="false"
+UPDATE_BENCHMARKS="false"
 BOOTSTRAP_OPTIONS=""
 
 for OPT in "$@"; do
@@ -25,6 +26,7 @@ for OPT in "$@"; do
       shift 1
   fi
   if [[ "$OPT" = *"--update"* ]]; then
+      UPDATE_BENCHMARKS="true"
       BOOTSTRAP_OPTIONS="$BOOTSTRAP_OPTIONS --update"
       shift 1
   fi
@@ -36,13 +38,17 @@ fi
 
 cd "$BASE_DIR"
 
-(cd "$BASE_DIR"; ./scripts/python-version-checker.py)
+if [ ! -d "skf-labs" ]; then
+  git clone https://github.com/blabla1337/skf-labs.git
+fi
+(
+  cd skf-labs;
+  git fetch;
+  if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
+    git reset --hard 8af9edc83e313be1578c5dee0fd4ecdf7ac18a32
+  else
+    git pull
+  fi
+)
 
-(cd "$BASE_DIR"; ./scripts/benchmarks/BenchmarkJava/bootstrap.sh "$BOOTSTRAP_OPTIONS")
-(cd "$BASE_DIR"; ./scripts/benchmarks/BenchmarkJava/bootstrap-mutated.sh "$BOOTSTRAP_OPTIONS")
-(cd "$BASE_DIR"; ./scripts/benchmarks/reality-check/bootstrap.sh "$BOOTSTRAP_OPTIONS")
-(cd "$BASE_DIR"; ./scripts/benchmarks/Juliet/csharp/bootstrap.sh "$BOOTSTRAP_OPTIONS")
-(cd "$BASE_DIR"; ./scripts/benchmarks/sast-rules/bootstrap.sh "$BOOTSTRAP_OPTIONS")
-(cd "$BASE_DIR"; ./scripts/benchmarks/skf-labs/bootstrap.sh "$BOOTSTRAP_OPTIONS")
-
-(cd "$BASE_DIR"; ./scripts/bentoo.sh)
+(cd "$BASE_DIR"; ./scripts/benchmarks/skf-labs/python/bootstrap.sh "$BOOTSTRAP_OPTIONS")

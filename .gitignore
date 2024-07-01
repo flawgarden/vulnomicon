@@ -3,4 +3,7 @@
 /reality-check*
 /JulietCSharp*
 /sast-rules*
+/skf-labs*
 /tool_runners/
+
+/scripts/benchmarks/**/metadata/
