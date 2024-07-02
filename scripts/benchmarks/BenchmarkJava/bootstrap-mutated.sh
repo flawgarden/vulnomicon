@@ -37,17 +37,17 @@ fi
 
 cd "$BASE_DIR"
 
-if [[ ! -v VULNOMICON_JAVA_HOME_11 ]]; then
-    echo "VULNOMICON_JAVA_HOME_11 is not set"
+if [[ ! -v VULNOMICON_JAVA_HOME_17 ]]; then
+    echo "VULNOMICON_JAVA_HOME_17 is not set"
     exit 1
-elif [[ -z "${VULNOMICON_JAVA_HOME_11}" ]]; then
-    echo "VULNOMICON_JAVA_HOME_11 is set to the empty string"
+elif [[ -z "${VULNOMICON_JAVA_HOME_17}" ]]; then
+    echo "VULNOMICON_JAVA_HOME_17 is set to the empty string"
     exit 1
 else
-    echo "VULNOMICON_JAVA_HOME_11 has the value: ${VULNOMICON_JAVA_HOME_11}"
+    echo "VULNOMICON_JAVA_HOME_17 has the value: ${VULNOMICON_JAVA_HOME_17}"
 fi
 
-export JAVA_HOME="${VULNOMICON_JAVA_HOME_11}"
+export JAVA_HOME="${VULNOMICON_JAVA_HOME_17}"
 
 if [ ! -d "BenchmarkJava-mutated" ]; then
   git clone https://github.com/flawgarden/BenchmarkJava-mutated.git
@@ -56,11 +56,11 @@ fi
   cd BenchmarkJava-mutated;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard ac71f3701a4775819935aac4243939f11aac54e7
+    git reset --hard 71aa10171fa93aeed7e5f57b30d8333667ff647b
   else
     git pull
   fi
 )
 
 (cd "$BASE_DIR"/BenchmarkJava-mutated; mvn compile)
-(cd "$BASE_DIR"; ./scripts/benchmarks/BenchmarkJava/markup.py "BenchmarkJava-mutated" "flawgarden-BenchmarkJava-mutated-demo")
+(cd "$BASE_DIR"; ./scripts/benchmarks/BenchmarkJava/markup.py "BenchmarkJava-mutated" "flawgarden-BenchmarkJava-mutated")
