@@ -46,7 +46,9 @@ jobs:
 
     - name: Reference run
       shell: bash
-      run: ${{ env.RUN_BENCHMARK_SCRIPT }}
+      run: |
+        export VULNOMICON_JAVA_HOME_11=/usr/lib/jvm/java-11-openjdk-amd64/
+         ${{ env.RUN_BENCHMARK_SCRIPT }}
 
     - name: Archive output
       uses: actions/upload-artifact@v4
