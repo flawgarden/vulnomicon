@@ -26,6 +26,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Install Python requirements
+      run: pip install -r ./requirements.txt
+
     - name: Install tools needed for JulietCSharp download and run
       run: |
         sudo apt-get update

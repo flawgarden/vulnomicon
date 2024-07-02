@@ -17,3 +17,4 @@ PATH=$PATH:$(pwd)
 
 bentoo template --tools tool_runners/tools_java.toml BenchmarkJava > BenchmarkJava/runs.toml
 bentoo bench --tools tool_runners/tools_java.toml --runs BenchmarkJava/runs.toml --timeout 1200 BenchmarkJava-output
+./scripts/draw-benchamrk-summary-charts.py BenchmarkJava-output BenchmarkJava benchmark_java

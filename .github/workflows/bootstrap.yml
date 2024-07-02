@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Install python requirements
+    - name: Install Python requirements
       run: pip install -r ./requirements.txt
 
     - name: Install Java
