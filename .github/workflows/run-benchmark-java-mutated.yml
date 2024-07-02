@@ -34,13 +34,13 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y -q --no-install-recommends \
           git \
-          openjdk-11-jdk \
-          openjdk-11-jre-headless \
+          openjdk-17-jdk \
+          openjdk-17-jre-headless \
           maven
 
     - name: Bootstrap
       run: |
-        export VULNOMICON_JAVA_HOME_11=/usr/lib/jvm/java-11-openjdk-amd64/
+        export VULNOMICON_JAVA_HOME_17=/usr/lib/jvm/java-17-openjdk-amd64/
         ${{ env.BOOTSTRAP_SCRIPT }} --exit-on-error
         ${{ env.BENTOO_SCRIPT }}
 
