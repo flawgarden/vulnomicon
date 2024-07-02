@@ -25,3 +25,4 @@ PATH=$PATH:$(pwd)
 
 bentoo template --tools tool_runners/tools_python.toml sast-rules/python > sast-rules/python/runs.toml
 bentoo bench --tools tool_runners/tools_python.toml --runs sast-rules/python/runs.toml sast-rules-python-output
+./scripts/draw-benchamrk-summary-charts.py sast-rules-python-output sast-rules-python sast_rules_python
