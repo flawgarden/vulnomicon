@@ -25,3 +25,4 @@ PATH=$PATH:$(pwd)
 
 bentoo template --tools tool_runners/tools_python.toml skf-labs/python > skf-labs/python/runs.toml
 bentoo bench --tools tool_runners/tools_python.toml --runs skf-labs/python/runs.toml skf-labs-python-output
+./scripts/draw-benchamrk-summary-charts.py skf-labs-python-output skf-labs-python skf_labs_python
