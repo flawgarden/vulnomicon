@@ -6,4 +6,4 @@
 /skf-labs*
 /tool_runners/
 
-/scripts/benchmarks/**/metadata/
+/scripts/benchmarks/skf-labs/python/metadata/

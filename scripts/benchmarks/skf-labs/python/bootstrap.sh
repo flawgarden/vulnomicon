@@ -21,10 +21,17 @@ if [ ! -d "$BASE_DIR/skf-labs" ]; then
 fi
 
 EXIT_ON_ERROR="false"
+UPDATE_BENCHMARKS="false"
 
 for OPT in "$@"; do
   if [[ "$OPT" = *"--exit-on-error"* ]]; then
       EXIT_ON_ERROR="true"
+      BOOTSTRAP_OPTIONS="$BOOTSTRAP_OPTIONS --exit-on-error"
+      shift 1
+  fi
+  if [[ "$OPT" = *"--update"* ]]; then
+      UPDATE_BENCHMARKS="true"
+      BOOTSTRAP_OPTIONS="$BOOTSTRAP_OPTIONS --update"
       shift 1
   fi
 done
@@ -49,7 +56,11 @@ cd "$BASE_DIR"
       cd sonar-benchmarks-scores;
       git sparse-checkout add python/skf-labs-python;
       cd python/skf-labs-python;
-      git reset --hard f0cfec64a23908d4dde0720d73c91ce97fc7b6fd
+      if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
+        git reset --hard f0cfec64a23908d4dde0720d73c91ce97fc7b6fd
+      else
+        git pull
+      fi
     )
   fi
 
@@ -60,7 +71,11 @@ cd "$BASE_DIR"
       cd bentoo;
       git sparse-checkout add taxonomies;
       cd taxonomies;
-      git reset --hard b74ad08d034cce82a8d6afe60e27198b0e0e9a2b
+      if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
+        git reset --hard b74ad08d034cce82a8d6afe60e27198b0e0e9a2b
+      else
+        git pull
+      fi
     )
   fi
 )
