@@ -1,7 +1,8 @@
 beautifulsoup4
+kaleido
 lxml
-plotly
-PyYAML
 numpy
 pandas
-kaleido
+plotly
+pre-commit
+PyYAML
