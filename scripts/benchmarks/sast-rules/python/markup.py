@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
+import itertools
+import json
 import os
 import sys
 from dataclasses import dataclass
 from pathlib import Path
-import itertools
 
 import yaml
-import json
 
 
 @dataclass
@@ -101,7 +101,7 @@ def process_rule(
     on_suspicious,
 ) -> None:
     if end_location - start_location < 2:
-        assert False
+        raise AssertionError()
     if end_location - start_location > 2:
         on_suspicious()
         return
@@ -112,7 +112,7 @@ def process_rule(
         case Fail():
             fail_locations.append(start_location + 1)
         case _:
-            assert False
+            raise AssertionError()
 
 
 def get_indentation(line):

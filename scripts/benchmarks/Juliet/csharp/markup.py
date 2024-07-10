@@ -52,13 +52,8 @@ def generateCWEResult(startLine, endLine, testName, isVulnerable, cwe):
     result["ruleId"] = "CWE-" + str(cwe)
     location = {
         "physicalLocation": {
-            "artifactLocation": {
-                "uri": testName
-            },
-            "region": {
-                "startLine": startLine,
-                "endLine": endLine
-            }
+            "artifactLocation": {"uri": testName},
+            "region": {"startLine": startLine, "endLine": endLine},
         }
     }
     result["locations"] = []
@@ -68,21 +63,23 @@ def generateCWEResult(startLine, endLine, testName, isVulnerable, cwe):
 
 def generateSarif(julietRootPath, testFilesWithCWE):
     sarif_data_out = {
-        "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+        "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",  # noqa: B950
         "version": "2.1.0",
         "runs": [{"tool": {"driver": {"name": "JulietCSharp-1.3"}}}],
     }
     results = []
     for testFile, cwe in testFilesWithCWE:
         # removing the first directory as .sarif is already inside it
-        testRelativePath = testFile.path[len("./JulietCSharp/"):]
+        testRelativePath = testFile.path[len("./JulietCSharp/") :]
         (goods, bads) = getGoodAndBadParts(testFile.path)
         for good in goods:
-            results.append(generateCWEResult(
-                good[0], good[1], testRelativePath, False, cwe))
+            results.append(
+                generateCWEResult(good[0], good[1], testRelativePath, False, cwe)
+            )
         for bad in bads:
-            results.append(generateCWEResult(
-                bad[0], bad[1], testRelativePath, True, cwe))
+            results.append(
+                generateCWEResult(bad[0], bad[1], testRelativePath, True, cwe)
+            )
     sarif_data_out["runs"][0]["results"] = results
     out_file = open(julietRootPath + "/truth.sarif", "w")
     json.dump(sarif_data_out, out_file, indent=2)
@@ -104,7 +101,10 @@ def collectCWEsInDirectory(curDirectory, cwe=None):
                 if extension == ".cs" and fileEntry.name[0:3] == "CWE":
                     if cwe is None:
                         print(
-                            ".cs file found [" + fileEntry.name + "] before the CWE was set!")
+                            ".cs file found ["
+                            + fileEntry.name
+                            + "] before the CWE was set!"
+                        )
                         exit(1)
                     testFilesWithCWE.append((fileEntry, cwe))
     return testFilesWithCWE

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-import json
 import argparse
-from pathlib import Path
-from dataclasses import dataclass
 import glob
+import json
 import os
+from dataclasses import dataclass
+from pathlib import Path
 
 
 def parse_args() -> argparse.Namespace:
@@ -63,7 +63,7 @@ def get_rule_info(mappings: dict, sq_id: str) -> RuleInfo | None:
 
 def empty_sarif(name):
     return {
-        "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+        "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",  # noqa: B950
         "version": "2.1.0",
         "runs": [{"tool": {"driver": {"name": name}}, "results": []}],
     }

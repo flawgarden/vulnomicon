@@ -12,8 +12,9 @@ import sys
 # add JulietCSharp directory to search path so we can use py_common
 sys.path.append("../JulietCSharp")
 
-import py_common
-import update_csharp_templates
+# disabled E402 because of comment above
+import py_common  # noqa: E402
+import update_csharp_templates  # noqa: E402
 
 
 def copy_and_update_sln_template(sln_file_name, directory):
@@ -29,11 +30,11 @@ def copy_and_update_sln_template(sln_file_name, directory):
     contents = py_common.open_file_and_get_contents(sln_file_name)
 
     contents = contents.replace("$CWE_PROJECT_GUID$", proj_guid)
-    contents = contents.replace(
-        "$TCS_CSPROJ_GUID$", testcasesupport_csproj_guid)
+    contents = contents.replace("$TCS_CSPROJ_GUID$", testcasesupport_csproj_guid)
     # fake path so the ".." in the template will work correctly
-    contents = contents.replace("$SPLIT_DIR$", os.path.join(
-        "src", "testcases", "common") + os.sep)
+    contents = contents.replace(
+        "$SPLIT_DIR$", os.path.join("src", "testcases", "common") + os.sep
+    )
     # we need to put the whole path to the .csproj file
     contents = contents.replace("$CWE$.csproj", "$CWE_CSPROJ_PATH$")
 
@@ -47,7 +48,8 @@ def get_project_guid(csproj_path):
 
     if not guid:
         py_common.print_with_timestamp(
-            "Could not find GUID for the following project: " + csproj_path)
+            "Could not find GUID for the following project: " + csproj_path
+        )
         exit(3)
 
     return guid.group(1)
@@ -58,7 +60,7 @@ def get_csproj_info(dir_path, cwd):
         if f.endswith(".csproj"):
             csproj_path = os.path.join(dir_path, f)
             # keeping only the relative part of the path
-            csproj_path = csproj_path[len(cwd) + 1:]
+            csproj_path = csproj_path[len(cwd) + 1 :]
             return (csproj_path, get_project_guid(csproj_path))
 
 
@@ -89,18 +91,20 @@ def insert_cwe_projects(cwe_projects, main_sln):
         project_declarations.append(decl)
         project_compilations.append(comp)
 
-    contents = unchanged_top \
-        + project_declarations \
-        + unchanged_mid \
-        + project_compilations \
+    contents = (
+        unchanged_top
+        + project_declarations
+        + unchanged_mid
+        + project_compilations
         + unchanged_end
+    )
 
     py_common.write_file(main_sln, "\n".join(contents))
 
 
 def get_list_of_cwe_projects():
     cwe_regex = "CWE"
-    testcases_path = os.path.join('src', 'testcases')
+    testcases_path = os.path.join("src", "testcases")
     cwes = []
 
     # get the CWE directories in testcases folder
@@ -113,16 +117,16 @@ def get_list_of_cwe_projects():
 
     for dir in cwe_dirs:
         # check if the CWE is split into subdirectories
-        if 's01' in os.listdir(dir):
+        if "s01" in os.listdir(dir):
             # get the list of subdirectories
             cwe_sub_dirs = py_common.find_directories_in_dir(dir, r"^s\d.*")
 
             for sub_dir in cwe_sub_dirs:
-                cwes.append(get_csproj_info(os.path.join(
-                    testcases_path, dir, sub_dir), cwd))
+                cwes.append(
+                    get_csproj_info(os.path.join(testcases_path, dir, sub_dir), cwd)
+                )
         else:
-            cwes.append(get_csproj_info(
-                os.path.join(testcases_path, dir), cwd))
+            cwes.append(get_csproj_info(os.path.join(testcases_path, dir), cwd))
 
     return cwes
 
@@ -130,9 +134,10 @@ def get_list_of_cwe_projects():
 if __name__ == "__main__":
     # check if ./testcases directory exists, if not, we are running
     # from wrong working directory
-    if not os.path.exists(os.path.join('src', 'testcases')):
+    if not os.path.exists(os.path.join("src", "testcases")):
         py_common.print_with_timestamp(
-            "Wrong working directory; could not find testcases directory")
+            "Wrong working directory; could not find testcases directory"
+        )
         exit(1)
 
     sln_file_name = "MainJuliet.sln"
