@@ -2,7 +2,6 @@
 
 import sys
 
-
 REQUIRED_MAJOR_V = 3
 REQUIRED_MINOR_V = 10
 

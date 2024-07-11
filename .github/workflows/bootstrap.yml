@@ -41,4 +41,3 @@ jobs:
         export VULNOMICON_JAVA_HOME_11=/usr/lib/jvm/java-11-openjdk-amd64/
         export VULNOMICON_JAVA_HOME_17=/usr/lib/jvm/java-17-openjdk-amd64/
         ./bootstrap.sh --exit-on-error
-
