@@ -31,6 +31,39 @@ def draw_benchmark_metrics(data, name, filename, tablename):
     fig.write_image(filename)
 
 
+def draw_benchmark_time(data, name, filename, tablename):
+    df = pd.DataFrame(data, columns=[name, "Time, s"])
+    df.to_csv(tablename, index=False)
+
+    fig = px.bar(df, x=name, y="Time, s", text_auto=True, color="Time, s", height=400)
+    fig.update_traces(
+        textfont_size=12, textangle=0, textposition="outside", cliponaxis=False
+    )
+
+    fig.write_image(filename)
+
+
+def draw_benchmark_time_leafs(data, name, filename, tablename):
+    df = pd.DataFrame(data, columns=[name, "Time, s", "Project Number"])
+    df.to_csv(tablename, index=False)
+
+    fig = px.histogram(
+        df,
+        x="Project Number",
+        y="Time, s",
+        text_auto=True,
+        color=name,
+        facet_row=name,
+        height=1800,
+        width=4000,
+    )
+    fig.update_traces(
+        textfont_size=12, textangle=0, textposition="outside", cliponaxis=False
+    )
+
+    fig.write_image(filename)
+
+
 def draw_benchmark_dist_metrics(data, name, filename, tablename):
     df_benchmark_reality_check = pd.DataFrame(
         data, columns=[name, "Tool", "True Positive Count"]
@@ -55,10 +88,12 @@ def parse_summary(output_path):
     summary_filename = output_path + "/summary.json"
     cwe_data = []
     cwe_1000_data = []
+    time_data = []
     with open(summary_filename, "r") as file:
         summary = json.load(file)
         for tool_summary in summary["summaries"]:
             tool_name = tool_summary["tool"]["script"]
+            tool_time = tool_summary["total_time"]["secs"]
             runs_summary = tool_summary["runs_summary"]
             at_least_one_file_with_cwe_match = runs_summary[
                 "at_least_one_file_with_cwe_match"
@@ -94,26 +129,71 @@ def parse_summary(output_path):
             cwe_1000_data.append([tool_name, "Recall", cwe_1000_recall])
             cwe_1000_data.append([tool_name, "Precision", cwe_1000_precision])
             cwe_1000_data.append([tool_name, "F1-score", cwe_1000_f1_score])
-    return cwe_data, cwe_1000_data
+            time_data.append([tool_name, tool_time])
+    return cwe_data, cwe_1000_data, time_data
+
+
+def parse_leaf_summaries(root_path):
+    cwe_data = []
+    cwe_1000_data = []
+    time_data = []
+    leaf_count = 0
+    index = 1
+    for truth_path in Path(root_path).rglob("truth.sarif"):
+        output_path = truth_path.parent
+        project_cwe_data, project_cwe_1000_data, project_time_data = parse_summary(
+            output_path.as_posix()
+        )
+        for data in project_cwe_data:
+            data.append(str(index))
+        for data in project_cwe_1000_data:
+            data.append(str(index))
+        for data in project_time_data:
+            data.append(str(index))
+        cwe_data.extend(project_cwe_data)
+        cwe_1000_data.extend(project_cwe_1000_data)
+        time_data.extend(project_time_data)
+        leaf_count += 1
+        index += 1
+
+    return cwe_data, cwe_1000_data, time_data, leaf_count
 
 
 def main():
     benchmark_output_path = Path(sys.argv[1]).absolute().resolve().as_posix()
     benchmark_title = sys.argv[2]
     fig_name = sys.argv[3]
-    cwe_data, cwe_1000_data = parse_summary(benchmark_output_path)
+    cwe_data, cwe_1000_data, time_data = parse_summary(benchmark_output_path)
+    leaf_cwe_data, leaf_cwe_1000_data, leaf_time_data, leaf_count = (
+        parse_leaf_summaries(benchmark_output_path)
+    )
     fig_path = benchmark_output_path + "/" + fig_name
 
     draw_benchmark_metrics(
-        cwe_data, benchmark_title, fig_path + "_cwe.pdf", fig_path + "_cwe.csv"
+        cwe_data, benchmark_title + " CWE", fig_path + "_cwe.pdf", fig_path + "_cwe.csv"
     )
 
     draw_benchmark_metrics(
         cwe_1000_data,
-        benchmark_title,
+        benchmark_title + " CWE 1000",
         fig_path + "_cwe_1000.pdf",
         fig_path + "_cwe_1000.csv",
     )
+
+    draw_benchmark_time(
+        time_data,
+        benchmark_title + " Time",
+        fig_path + "_time.pdf",
+        fig_path + "_time.csv",
+    )
+
+    if leaf_count > 1:
+        draw_benchmark_time_leafs(
+            leaf_time_data,
+            benchmark_title + " Time",
+            fig_path + "_time_per_project.pdf",
+            fig_path + "_time_per_project.csv",
+        )
 
 
 if __name__ == "__main__":
