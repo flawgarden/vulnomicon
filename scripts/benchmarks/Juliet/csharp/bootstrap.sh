@@ -54,6 +54,7 @@ if [ ! -d "JulietCSharp" ]; then
 # deleting previously needed temporary fix, see https://github.com/dotnet/runtime/issues/17471
 # as Mono improved since Juliet was made, it is no longer necessary
   (cd JulietCSharp/lib; rm "System.Runtime.InteropServices.RuntimeInformation.dll")
+  (cd JulietCSharp/src; rm "TestCaseSupport/TestCaseSupport.sln")
 fi
 
 # the order is important so main Juliet sln will not be counted as a CWE
