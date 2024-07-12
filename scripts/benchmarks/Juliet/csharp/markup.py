@@ -3,6 +3,8 @@
 import json
 import os
 import re
+import sys
+import shutil
 
 BAD_PART_BEGIN = "#if +\\(!OMITBAD\\)"
 PART_END = "#endif"
@@ -61,7 +63,12 @@ def generateCWEResult(startLine, endLine, testName, isVulnerable, cwe):
     return result
 
 
-def generateSarif(julietRootPath, testFilesWithCWE):
+def generateSarif(sarifPath, testFilesWithCWE):
+    # adding build.sh for CodeQL
+    buildPath = os.path.join(sarifPath, "build.sh")
+    if not os.path.exists(buildPath):
+        shutil.copy("./scripts/benchmarks/Juliet/csharp/buildForJuliet.sh", buildPath)
+
     sarif_data_out = {
         "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",  # noqa: B950
         "version": "2.1.0",
@@ -70,7 +77,7 @@ def generateSarif(julietRootPath, testFilesWithCWE):
     results = []
     for testFile, cwe in testFilesWithCWE:
         # removing the first directory as .sarif is already inside it
-        testRelativePath = testFile.path[len("./JulietCSharp/") :]
+        testRelativePath = testFile.path[len(sarifPath) + 1:]
         (goods, bads) = getGoodAndBadParts(testFile.path)
         for good in goods:
             results.append(
@@ -81,7 +88,7 @@ def generateSarif(julietRootPath, testFilesWithCWE):
                 generateCWEResult(bad[0], bad[1], testRelativePath, True, cwe)
             )
     sarif_data_out["runs"][0]["results"] = results
-    out_file = open(julietRootPath + "/truth.sarif", "w")
+    out_file = open(sarifPath + "/truth.sarif", "w")
     json.dump(sarif_data_out, out_file, indent=2)
 
 
@@ -110,6 +117,22 @@ def collectCWEsInDirectory(curDirectory, cwe=None):
     return testFilesWithCWE
 
 
+def collectCWEProjects(curDirectory):
+    testProjects = []
+    with os.scandir(curDirectory.path) as iter:
+        for fileEntry in iter:
+            filePath = fileEntry.path
+            if fileEntry.is_dir():
+                innerProjects = collectCWEProjects(fileEntry)
+                testProjects.extend(innerProjects)
+            elif fileEntry.is_file():
+                _, extension = os.path.splitext(filePath)
+                if extension == ".csproj" and fileEntry.name[0:3] == "CWE":
+                    cwe = re.findall(r"\d+", fileEntry.name)[0]
+                    testProjects.append((curDirectory, cwe))
+    return testProjects
+
+
 def main():
     julietDirectory = None
     with os.scandir(".") as iter:
@@ -117,8 +140,13 @@ def main():
             if entry.is_dir() and entry.name == "JulietCSharp":
                 julietDirectory = entry
 
-    CWEFiles = collectCWEsInDirectory(julietDirectory)
-    generateSarif(julietDirectory.path, CWEFiles)
+    if len(sys.argv) > 1 and sys.argv[1] == "--single-sarif":
+        CWEFiles = collectCWEsInDirectory(julietDirectory)
+        generateSarif(julietDirectory.path, CWEFiles)
+    else:
+        for proj, cwe in collectCWEProjects(julietDirectory):
+            CWEFiles = collectCWEsInDirectory(proj, cwe)
+            generateSarif(proj.path, CWEFiles)
 
 
 if __name__ == "__main__":
