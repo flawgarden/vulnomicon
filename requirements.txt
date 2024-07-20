@@ -6,3 +6,4 @@ pandas
 plotly
 pre-commit
 PyYAML
+openpyxl
