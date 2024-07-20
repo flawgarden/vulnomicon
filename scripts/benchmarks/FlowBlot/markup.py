@@ -56,7 +56,7 @@ FLOW_VULNERABILITY = load_flow_vulnerabilities()
 
 def generate_sarif(sarif_path, test_files, cwe):
     sarif_data_out = {
-        "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+        "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",  # noqa: B950
         "version": "2.1.0",
         "runs": [{"tool": {"driver": {"name": "FlowBlot.NET at " + sarif_path}}}],
     }
