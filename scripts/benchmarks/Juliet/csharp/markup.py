@@ -3,8 +3,8 @@
 import json
 import os
 import re
-import sys
 import shutil
+import sys
 
 BAD_PART_BEGIN = "#if +\\(!OMITBAD\\)"
 PART_END = "#endif"
@@ -77,7 +77,7 @@ def generateSarif(sarifPath, testFilesWithCWE):
     results = []
     for testFile, cwe in testFilesWithCWE:
         # removing the first directory as .sarif is already inside it
-        testRelativePath = testFile.path[len(sarifPath) + 1:]
+        testRelativePath = testFile.path[len(sarifPath) + 1 :]
         (goods, bads) = getGoodAndBadParts(testFile.path)
         for good in goods:
             results.append(
