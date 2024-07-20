@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-import os
-import openpyxl
 import json
+import os
 import re
 
+import openpyxl
 
 FLOW_REGEX = r"Flow_(\d+)(\s*|_inplace)\.cs"
 CSPROJ_EXT = ".csproj"
@@ -30,14 +30,9 @@ def generate_flow_result(flow_path, is_vulnerable, total_lines, cwe):
     result["ruleId"] = "CWE-" + cwe
     location = {
         "physicalLocation": {
-            "artifactLocation": {
-                "uri": flow_path
-            },
+            "artifactLocation": {"uri": flow_path},
             # marking a whole file, as only one vulnerability is expected
-            "region": {
-                "startLine": 1,
-                "endLine": total_lines
-            }
+            "region": {"startLine": 1, "endLine": total_lines},
         }
     }
     result["locations"] = []
@@ -46,10 +41,10 @@ def generate_flow_result(flow_path, is_vulnerable, total_lines, cwe):
 
 
 def load_flow_vulnerabilities():
-    ws = openpyxl.load_workbook(CONTENTS_TABLE_PATH)['Sheet1']
+    ws = openpyxl.load_workbook(CONTENTS_TABLE_PATH)["Sheet1"]
     flow_vuln = [False for _ in range(TOTAL_FLOW_NUM)]
     for i in range(TOTAL_FLOW_NUM):
-        cell = ws['C' + str(i + 2)]
+        cell = ws["C" + str(i + 2)]
         flow_vuln[i] = cell.value == VULNERABLE_VALUE
     # filling up the flows that are not present in the sheet
     flow_vuln.extend([False, False, True, True, True, True])
@@ -68,14 +63,13 @@ def generate_sarif(sarif_path, test_files, cwe):
     results = []
     for flow_path in test_files:
         # removing the first directory as .sarif is already inside it
-        relative_path = flow_path[len(sarif_path) + 1:]
+        relative_path = flow_path[len(sarif_path) + 1 :]
         flow_id = int(re.search(FLOW_REGEX, flow_path).group(1)) - 1
         total_lines = get_lines_num(flow_path)
 
-        flow_result = generate_flow_result(relative_path,
-                                           FLOW_VULNERABILITY[flow_id],
-                                           total_lines,
-                                           cwe)
+        flow_result = generate_flow_result(
+            relative_path, FLOW_VULNERABILITY[flow_id], total_lines, cwe
+        )
         results.append(flow_result)
     sarif_data_out["runs"][0]["results"] = results
 
@@ -95,16 +89,16 @@ def collect_flows(cur_path):
 
 
 def is_csproj_present(path):
-    return any(map(lambda x: x.is_file() and x.name.endswith(CSPROJ_EXT),
-                   os.scandir(path)))
+    return any(
+        map(lambda x: x.is_file() and x.name.endswith(CSPROJ_EXT), os.scandir(path))
+    )
 
 
 def collect_projects(path):
     projects_and_cwes = []
 
     # collecting all project directories from root
-    dirs = filter(lambda x: x.is_dir() and is_csproj_present(x.path),
-                  os.scandir(path))
+    dirs = filter(lambda x: x.is_dir() and is_csproj_present(x.path), os.scandir(path))
     paths = list(map(lambda x: x.path, dirs))
 
     # take those with CWE in the name
@@ -119,7 +113,7 @@ def collect_projects(path):
 def main():
     projects = collect_projects("./FlowBlot.NET")
 
-    for (project_path, cwe) in projects:
+    for project_path, cwe in projects:
         flows = collect_flows(project_path)
 
         generate_sarif(project_path, flows, cwe)

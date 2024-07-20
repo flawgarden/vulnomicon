@@ -2,8 +2,8 @@ beautifulsoup4
 kaleido
 lxml
 numpy
+openpyxl
 pandas
 plotly
 pre-commit
 PyYAML
-openpyxl
