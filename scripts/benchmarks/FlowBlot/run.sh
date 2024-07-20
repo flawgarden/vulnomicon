@@ -17,3 +17,4 @@ PATH=$PATH:$(pwd)
 
 bentoo template --tools tool_runners/tools_csharp.toml FlowBlot.NET > FlowBlot.NET/runs.toml
 bentoo bench --tools tool_runners/tools_csharp.toml --runs FlowBlot.NET/runs.toml --timeout 1200 FlowBlot.NET-output
+./scripts/draw-benchamrk-summary-charts.py FlowBlot.NET-output FlowBlot.NET flowblot
