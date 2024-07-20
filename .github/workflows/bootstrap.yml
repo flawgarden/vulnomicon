@@ -29,6 +29,11 @@ jobs:
           openjdk-17-jre-headless \
           maven
 
+    - name: Install .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 6.0.x
+
     - name: Install tools needed for JulietCSharp download and run
       run: |
         sudo apt-get update
