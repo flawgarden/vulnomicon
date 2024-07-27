@@ -19,6 +19,7 @@ env:
   RUN_BENCHMARK_SCRIPT: "./scripts/benchmarks/BenchmarkJava/run-mutated.sh"
   RUN_BENCHMARK_OUTPUT: "BenchmarkJava-mutated-output"
   BOOTSTRAP_SCRIPT: "./scripts/benchmarks/BenchmarkJava/bootstrap-mutated.sh"
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
 jobs:
   reference_run:

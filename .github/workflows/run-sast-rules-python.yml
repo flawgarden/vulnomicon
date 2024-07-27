@@ -19,6 +19,7 @@ env:
   RUN_BENCHMARK_SCRIPT: "./scripts/benchmarks/sast-rules/python/run.sh"
   RUN_BENCHMARK_OUTPUT: "sast-rules-python-output"
   BOOTSTRAP_SCRIPT: "./scripts/benchmarks/sast-rules/bootstrap.sh"
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
 jobs:
   reference_run:

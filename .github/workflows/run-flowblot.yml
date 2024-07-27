@@ -19,6 +19,7 @@ env:
   RUN_BENCHMARK_SCRIPT: "./scripts/benchmarks/FlowBlot/run.sh"
   RUN_BENCHMARK_OUTPUT: "FlowBlot.NET-output"
   BOOTSTRAP_SCRIPT: "./scripts/benchmarks/FlowBlot/bootstrap.sh"
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
 jobs:
   reference_run:

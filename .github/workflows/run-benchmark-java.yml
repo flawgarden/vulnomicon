@@ -19,6 +19,7 @@ env:
   RUN_BENCHMARK_SCRIPT: "./scripts/benchmarks/BenchmarkJava/run.sh"
   RUN_BENCHMARK_OUTPUT: "BenchmarkJava-output"
   BOOTSTRAP_SCRIPT: "./scripts/benchmarks/BenchmarkJava/bootstrap.sh"
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
 jobs:
   reference_run:
