@@ -15,7 +15,7 @@ def draw_benchmark_metrics(data, name, filename, tablename):
     df = pd.DataFrame(data, columns=[name, "Metric", "rate, unit interval"])
     df.to_csv(tablename, index=False)
 
-    fig = px.histogram(
+    fig = px.bar(
         df,
         x=name,
         y="rate, unit interval",
@@ -47,7 +47,7 @@ def draw_benchmark_time_leafs(data, name, filename, tablename):
     df = pd.DataFrame(data, columns=[name, "Time, s", "Project Number"])
     df.to_csv(tablename, index=False)
 
-    fig = px.histogram(
+    fig = px.bar(
         df,
         x="Project Number",
         y="Time, s",
@@ -94,7 +94,9 @@ def parse_summary(output_path):
     with open(summary_filename, "r") as file:
         summary = json.load(file)
         for tool_summary in summary["summaries"]:
-            tool_name = tool_summary["tool"]["script"]
+            tool_name = (
+                tool_summary["tool"]["script"] + "/" + tool_summary["tool"]["config"]
+            )
             tool_time = tool_summary["total_time"]["secs"]
             runs_summary = tool_summary["runs_summary"]
             at_least_one_file_with_cwe_match = runs_summary[
@@ -111,9 +113,13 @@ def parse_summary(output_path):
             ]
             cwe_recall = at_least_one_file_with_cwe_match["recall"]
             cwe_precision = at_least_one_file_with_cwe_match["precision"]
+            if cwe_precision is None:
+                cwe_precision = 0
             cwe_f1_score = at_least_one_file_with_cwe_match["f1_score"]
             cwe_region_recall = at_least_one_region_with_cwe_match["recall"]
             cwe_region_precision = at_least_one_region_with_cwe_match["precision"]
+            if cwe_region_precision is None:
+                cwe_region_precision = 0
             cwe_region_f1_score = at_least_one_region_with_cwe_match["f1_score"]
             at_least_one_file_with_cwe_1000_match = runs_summary[
                 "at_least_one_file_with_cwe_1000_match"
@@ -123,6 +129,8 @@ def parse_summary(output_path):
             ]
             cwe_1000_recall = at_least_one_file_with_cwe_1000_match["recall"]
             cwe_1000_precision = at_least_one_file_with_cwe_1000_match["precision"]
+            if cwe_1000_precision is None:
+                cwe_1000_precision = 0
             cwe_1000_f1_score = at_least_one_file_with_cwe_1000_match["f1_score"]
             at_least_one_region_with_cwe_1000_match = runs_summary[
                 "at_least_one_region_with_cwe_1000_match"
@@ -134,6 +142,8 @@ def parse_summary(output_path):
             cwe_1000_region_precision = at_least_one_region_with_cwe_1000_match[
                 "precision"
             ]
+            if cwe_1000_region_precision is None:
+                cwe_1000_region_precision = 0
             cwe_1000_region_f1_score = at_least_one_region_with_cwe_1000_match[
                 "f1_score"
             ]
