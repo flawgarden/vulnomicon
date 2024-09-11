@@ -73,7 +73,9 @@ def generate_sarif(sarif_path, test_files, cwe):
         results.append(flow_result)
     sarif_data_out["runs"][0]["results"] = results
 
-    with open(sarif_path + "/truth.sarif", "w") as out_file:
+    os.makedirs("markup/" + sarif_path, exist_ok=True)
+
+    with open("markup/" + sarif_path + "/truth.sarif", "w") as out_file:
         json.dump(sarif_data_out, out_file, indent=2)
 
 

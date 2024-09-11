@@ -49,3 +49,4 @@ fi
 )
 
 (cd "$BASE_DIR"; ./scripts/benchmarks/FlowBlot/markup.py)
+(cd "$BASE_DIR"; cp -r markup/FlowBlot.NET/* FlowBlot.NET)
