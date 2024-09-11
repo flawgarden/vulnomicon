@@ -49,3 +49,4 @@ fi
 )
 
 (cd "$BASE_DIR"; ./scripts/benchmarks/sast-rules/python/markup.py "sast-rules/python")
+(cd "$BASE_DIR"; cp -r markup/sast-rules/* sast-rules)
