@@ -81,3 +81,4 @@ cd "$BASE_DIR"
 )
 
 (cd "$BASE_DIR"; ./scripts/benchmarks/skf-labs/python/markup.py "skf-labs/python")
+(cd "$BASE_DIR"; cp -r markup/skf-labs/python/* skf-labs/python)
