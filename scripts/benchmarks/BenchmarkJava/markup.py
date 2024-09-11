@@ -71,6 +71,7 @@ def convert(owasp_root_path_str, name, markup_path_str):
 def main():
     benchmark_path = Path(sys.argv[1]).absolute().resolve().as_posix()
     markup_path = Path("markup/" + sys.argv[1]).absolute().resolve().as_posix()
+    os.makedirs(markup_path, exist_ok=True)
     benchmark_name = sys.argv[2]
     convert(benchmark_path, benchmark_name, markup_path)
 

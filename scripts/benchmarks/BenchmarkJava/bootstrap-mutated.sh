@@ -64,3 +64,4 @@ fi
 
 (cd "$BASE_DIR"/BenchmarkJava-mutated; mvn compile)
 (cd "$BASE_DIR"; ./scripts/benchmarks/BenchmarkJava/markup.py "BenchmarkJava-mutated" "flawgarden-BenchmarkJava-mutated")
+(cd "$BASE_DIR"; cp -r markup/BenchmarkJava-mutated/* BenchmarkJava-mutated)
