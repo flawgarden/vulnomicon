@@ -64,3 +64,4 @@ fi
 
 (cd "$BASE_DIR"/BenchmarkJava; mvn compile)
 (cd "$BASE_DIR"; ./scripts/benchmarks/BenchmarkJava/markup.py "BenchmarkJava" "OWASP-BenchmarkJava-v1.2")
+(cd "$BASE_DIR"; cp -r markup/BenchmarkJava/* BenchmarkJava)
