@@ -62,3 +62,4 @@ fi
 
 # specifying mono-xbuild as the compiling tool of the project
 (cd "$BASE_DIR"/JulietCSharp; cp ../scripts/benchmarks/Juliet/csharp/buildForJuliet.sh build.sh)
+(cd "$BASE_DIR"; cp -r markup/JulietCSharp/* JulietCSharp)
