@@ -206,7 +206,8 @@ def main():
         for markup in markups:
             merged_results.extend([(markup.name, result) for result in markup.results])
 
-        write_sarif("markup" / Path(args.filepath), merged_results)
+        markup_path = "markup" / Path(args.filepath)
+        write_sarif(markup_path, merged_results)
 
 
 if __name__ == "__main__":

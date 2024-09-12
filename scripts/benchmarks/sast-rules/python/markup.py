@@ -245,9 +245,10 @@ def main():
     with open(manual_markup_path, "r") as manual_markup_f:
         manual_markup = json.load(manual_markup_f)
 
-    os.makedirs("markup" / sast_rules_path, exist_ok=True)
+    markup_path = "markup" / sast_rules_path
+    os.makedirs(markup_path, exist_ok=True)
     markup(sast_rules_path.absolute().as_posix(), manual_markup["runs"][0]["results"])
-    with open("markup" / sast_rules_path / "truth.sarif", "w") as truth_f:
+    with open(markup_path / "truth.sarif", "w") as truth_f:
         json.dump(manual_markup, truth_f, indent=2)
 
 

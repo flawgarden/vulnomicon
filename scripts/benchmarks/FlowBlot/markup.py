@@ -54,16 +54,16 @@ def load_flow_vulnerabilities():
 FLOW_VULNERABILITY = load_flow_vulnerabilities()
 
 
-def generate_sarif(sarif_path, test_files, cwe):
+def generate_sarif(project_path, test_files, cwe):
     sarif_data_out = {
         "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",  # noqa: B950
         "version": "2.1.0",
-        "runs": [{"tool": {"driver": {"name": "FlowBlot.NET at " + sarif_path}}}],
+        "runs": [{"tool": {"driver": {"name": "FlowBlot.NET at " + project_path}}}],
     }
     results = []
     for flow_path in test_files:
         # removing the first directory as .sarif is already inside it
-        relative_path = flow_path[len(sarif_path) + 1 :]
+        relative_path = flow_path[len(project_path) + 1 :]
         flow_id = int(re.search(FLOW_REGEX, flow_path).group(1)) - 1
         total_lines = get_lines_num(flow_path)
 
@@ -73,9 +73,10 @@ def generate_sarif(sarif_path, test_files, cwe):
         results.append(flow_result)
     sarif_data_out["runs"][0]["results"] = results
 
-    os.makedirs("markup/" + sarif_path, exist_ok=True)
+    sarif_path = "markup/" + project_path
+    os.makedirs(sarif_path, exist_ok=True)
 
-    with open("markup/" + sarif_path + "/truth.sarif", "w") as out_file:
+    with open(sarif_path + "/truth.sarif", "w") as out_file:
         json.dump(sarif_data_out, out_file, indent=2)
 
 
