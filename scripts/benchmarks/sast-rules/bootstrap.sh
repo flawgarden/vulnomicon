@@ -48,5 +48,7 @@ fi
   fi
 )
 
-(cd "$BASE_DIR"; ./scripts/benchmarks/sast-rules/python/markup.py "sast-rules/python")
+if [[ "$UPDATE_BENCHMARKS" = "true" ]]; then
+  (cd "$BASE_DIR"; ./scripts/benchmarks/sast-rules/python/markup.py "sast-rules/python")
+fi
 (cd "$BASE_DIR"; cp -r markup/sast-rules/* sast-rules)

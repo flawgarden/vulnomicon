@@ -57,7 +57,9 @@ if [ ! -d "JulietCSharp" ]; then
 fi
 
 # the order is important so main Juliet sln will not be counted as a CWE
-(cd "$BASE_DIR"; ./scripts/benchmarks/Juliet/csharp/markup.py)
+if [[ "$UPDATE_BENCHMARKS" = "true" ]]; then
+  (cd "$BASE_DIR"; ./scripts/benchmarks/Juliet/csharp/markup.py)
+fi
 (cd "$BASE_DIR"/JulietCSharp; ../scripts/benchmarks/Juliet/csharp/create_single_project.py)
 
 # specifying mono-xbuild as the compiling tool of the project
