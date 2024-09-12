@@ -48,4 +48,7 @@ fi
   fi
 )
 
-(cd "$BASE_DIR"; ./scripts/benchmarks/FlowBlot/markup.py)
+if [[ "$UPDATE_BENCHMARKS" = "true" ]]; then
+  (cd "$BASE_DIR"; ./scripts/benchmarks/FlowBlot/markup.py)
+fi
+(cd "$BASE_DIR"; cp -r markup/FlowBlot.NET/* FlowBlot.NET)

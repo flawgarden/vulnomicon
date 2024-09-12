@@ -81,7 +81,9 @@ def generateSarif(julietRootPath, testFilesWithCWE):
                 generateCWEResult(bad[0], bad[1], testRelativePath, True, cwe)
             )
     sarif_data_out["runs"][0]["results"] = results
-    out_file = open(julietRootPath + "/truth.sarif", "w")
+    markup_path = "markup/" + julietRootPath
+    os.makedirs(markup_path, exist_ok=True)
+    out_file = open(markup_path + "/truth.sarif", "w")
     json.dump(sarif_data_out, out_file, indent=2)
 
 

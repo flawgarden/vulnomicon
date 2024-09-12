@@ -26,7 +26,7 @@ def lines_number(file_path):
     return res
 
 
-def convert(owasp_root_path_str, name):
+def convert(owasp_root_path_str, name, markup_path_str):
     sarif_data_out = {
         "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",  # noqa: B950
         "version": "2.1.0",
@@ -64,14 +64,16 @@ def convert(owasp_root_path_str, name):
         result["locations"].append(location)
         results.append(result)
     sarif_data_out["runs"][0]["results"] = results
-    out_file = open(owasp_root_path_str + "/truth.sarif", "w")
+    out_file = open(markup_path_str + "/truth.sarif", "w")
     json.dump(sarif_data_out, out_file, indent=2)
 
 
 def main():
     benchmark_path = Path(sys.argv[1]).absolute().resolve().as_posix()
+    markup_path = Path("markup/" + sys.argv[1]).absolute().resolve().as_posix()
+    os.makedirs(markup_path, exist_ok=True)
     benchmark_name = sys.argv[2]
-    convert(benchmark_path, benchmark_name)
+    convert(benchmark_path, benchmark_name, markup_path)
 
 
 if __name__ == "__main__":
