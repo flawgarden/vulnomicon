@@ -5,17 +5,17 @@ BASE_DIR="$(cd "$SCRIPT_DIR"/../../../ && pwd)"
 
 cd "$BASE_DIR" || exit;
 
-if [[ ! -v VULNOMICON_JAVA_HOME_17 ]]; then
-    echo "VULNOMICON_JAVA_HOME_17 is not set"
+if [[ ! -v VULNOMICON_JAVA_HOME_22 ]]; then
+    echo "VULNOMICON_JAVA_HOME_22 is not set"
     exit 1
-elif [[ -z "${VULNOMICON_JAVA_HOME_17}" ]]; then
-    echo "VULNOMICON_JAVA_HOME_17 is set to the empty string"
+elif [[ -z "${VULNOMICON_JAVA_HOME_22}" ]]; then
+    echo "VULNOMICON_JAVA_HOME_22 is set to the empty string"
     exit 1
 else
-    echo "VULNOMICON_JAVA_HOME_17 has the value: ${VULNOMICON_JAVA_HOME_17}"
+    echo "VULNOMICON_JAVA_HOME_22 has the value: ${VULNOMICON_JAVA_HOME_22}"
 fi
 
-export JAVA_HOME="${VULNOMICON_JAVA_HOME_17}"
+export JAVA_HOME="${VULNOMICON_JAVA_HOME_22}"
 
 if [ ! -f "bentoo" ]; then
     echo "Please run bentoo.sh beforehand"

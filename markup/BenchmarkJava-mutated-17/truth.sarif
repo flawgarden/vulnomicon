@@ -5,7 +5,7 @@
     {
       "tool": {
         "driver": {
-          "name": "flawgarden-BenchmarkJava-mutated"
+          "name": "flawgarden-BenchmarkJava-mutated-17"
         }
       },
       "results": [
