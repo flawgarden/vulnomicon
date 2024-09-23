@@ -32,6 +32,10 @@ jobs:
 
     - name: Install Java
       run: |
+        sudo apt-get update
+        sudo apt-get install -y -q --no-install-recommends \
+          git \
+          maven
         wget https://download.oracle.com/java/22/archive/jdk-22.0.1_linux-x64_bin.deb -O jdk-22.0.1_linux-x64_bin.deb
         sudo dpkg -i jdk-22.0.1_linux-x64_bin.deb
 
