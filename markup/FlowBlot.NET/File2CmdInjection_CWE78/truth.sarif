@@ -1,0 +1,3255 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "FlowBlot.NET at ./FlowBlot.NET/File2CmdInjection_CWE78"
+        }
+      },
+      "results": [
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00073.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00073.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 28
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00043.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00043.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 31
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00080.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00080.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00043_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00043_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 82
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00073_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00073_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 79
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00078_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00078_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 83
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00079.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00079.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 25
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00081_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00081_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 73
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00072.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00072.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00074.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00074.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 33
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00074_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00074_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 84
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00078.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00078.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 32
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00044_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00044_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 80
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00080_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00080_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 71
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00044.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00044.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 29
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00081.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00081.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 22
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00072_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00072_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Miscellaneous/Flow_00079_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Miscellaneous/Flow_00079_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 76
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00032.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00032.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00056.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00056.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 25
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00065_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00065_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 78
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00036.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00036.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 44
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00048_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00048_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 91
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00047_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00047_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 91
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00057.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00057.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 25
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00046_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00046_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 93
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00032_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00032_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 71
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00046.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00046.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 42
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00057_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00057_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 76
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00055.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00055.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 25
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00065.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00065.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 27
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00045.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00045.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00075_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00075_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 79
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00058_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00058_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00047.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00047.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 40
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00058.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00058.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00033_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00033_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 79
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00056_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00056_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 76
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00033.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00033.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 28
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00045_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00045_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00067.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00067.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00036_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00036_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 95
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00055_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00055_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 76
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00075.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00075.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 28
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00067_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00067_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 71
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Points-To-Analysis/Flow_00048.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Points-To-Analysis/Flow_00048.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 40
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Exceptions/Flow_00038_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Exceptions/Flow_00038_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 80
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Exceptions/Flow_00037_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Exceptions/Flow_00037_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 73
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Exceptions/Flow_00037.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Exceptions/Flow_00037.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 22
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Exceptions/Flow_00038.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Exceptions/Flow_00038.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 29
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Multi-Source-Multi-Sink/Flow_00026.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Multi-Source-Multi-Sink/Flow_00026.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Multi-Source-Multi-Sink/Flow_00024.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Multi-Source-Multi-Sink/Flow_00024.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Multi-Source-Multi-Sink/Flow_00023_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Multi-Source-Multi-Sink/Flow_00023_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 66
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Multi-Source-Multi-Sink/Flow_00025.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Multi-Source-Multi-Sink/Flow_00025.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Multi-Source-Multi-Sink/Flow_00025_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Multi-Source-Multi-Sink/Flow_00025_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 67
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Multi-Source-Multi-Sink/Flow_00026_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Multi-Source-Multi-Sink/Flow_00026_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 66
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Multi-Source-Multi-Sink/Flow_00024_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Multi-Source-Multi-Sink/Flow_00024_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 67
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Multi-Source-Multi-Sink/Flow_00023.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Multi-Source-Multi-Sink/Flow_00023.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Context-Sensitivity/Flow_00009_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Context-Sensitivity/Flow_00009_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 72
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Context-Sensitivity/Flow_00009.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Context-Sensitivity/Flow_00009.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 21
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Context-Sensitivity/Flow_00010.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Context-Sensitivity/Flow_00010.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 27
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Context-Sensitivity/Flow_00010_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Context-Sensitivity/Flow_00010_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 78
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Simple/Flow_00002_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Simple/Flow_00002_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 64
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Simple/Flow_00001.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Simple/Flow_00001.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Simple/Flow_00011.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Simple/Flow_00011.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 21
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Simple/Flow_00002.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Simple/Flow_00002.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 13
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Simple/Flow_00001_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Simple/Flow_00001_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 66
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Simple/Flow_00011_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Simple/Flow_00011_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 72
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Getter-Setter/Flow_00020_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Getter-Setter/Flow_00020_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 71
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Getter-Setter/Flow_00019.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Getter-Setter/Flow_00019.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 21
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Getter-Setter/Flow_00020.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Getter-Setter/Flow_00020.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Getter-Setter/Flow_00019_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Getter-Setter/Flow_00019_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 72
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Polymorphism/Flow_00022_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Polymorphism/Flow_00022_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 81
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Polymorphism/Flow_00021.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Polymorphism/Flow_00021.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 22
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Polymorphism/Flow_00076_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Polymorphism/Flow_00076_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 75
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Polymorphism/Flow_00021_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Polymorphism/Flow_00021_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 73
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Polymorphism/Flow_00022.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Polymorphism/Flow_00022.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 30
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Polymorphism/Flow_00076.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Polymorphism/Flow_00076.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 24
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/PassByReference/Flow_00029_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/PassByReference/Flow_00029_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 73
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/PassByReference/Flow_00030_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/PassByReference/Flow_00030_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/PassByReference/Flow_00012_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/PassByReference/Flow_00012_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 75
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/PassByReference/Flow_00012.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/PassByReference/Flow_00012.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 24
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/PassByReference/Flow_00029.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/PassByReference/Flow_00029.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 22
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/PassByReference/Flow_00013_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/PassByReference/Flow_00013_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 76
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/PassByReference/Flow_00030.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/PassByReference/Flow_00030.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/PassByReference/Flow_00013.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/PassByReference/Flow_00013.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 25
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Static-Variable/Flow_00031_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Static-Variable/Flow_00031_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 70
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Static-Variable/Flow_00031.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Static-Variable/Flow_00031.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Recursion/Flow_00017_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Recursion/Flow_00017_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 80
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Recursion/Flow_00017.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Recursion/Flow_00017.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 29
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Recursion/Flow_00035.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Recursion/Flow_00035.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 69
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Recursion/Flow_00035_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Recursion/Flow_00035_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 120
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Reflection/Flow_00062_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Reflection/Flow_00062_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 85
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Reflection/Flow_00062.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Reflection/Flow_00062.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 34
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Path-Sensitivity/Flow_00015_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Path-Sensitivity/Flow_00015_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 82
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Path-Sensitivity/Flow_00007_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Path-Sensitivity/Flow_00007_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 69
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Path-Sensitivity/Flow_00015.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Path-Sensitivity/Flow_00015.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 31
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Path-Sensitivity/Flow_00027_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Path-Sensitivity/Flow_00027_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 79
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Path-Sensitivity/Flow_00027.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Path-Sensitivity/Flow_00027.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 28
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Path-Sensitivity/Flow_00014_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Path-Sensitivity/Flow_00014_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 82
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Path-Sensitivity/Flow_00007.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Path-Sensitivity/Flow_00007.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 18
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Path-Sensitivity/Flow_00008_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Path-Sensitivity/Flow_00008_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 70
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Path-Sensitivity/Flow_00008.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Path-Sensitivity/Flow_00008.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Path-Sensitivity/Flow_00014.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Path-Sensitivity/Flow_00014.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 31
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Lambda-Functions/Flow_00060_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Lambda-Functions/Flow_00060_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Lambda-Functions/Flow_00061_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Lambda-Functions/Flow_00061_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 73
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Lambda-Functions/Flow_00077_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Lambda-Functions/Flow_00077_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Lambda-Functions/Flow_00060.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Lambda-Functions/Flow_00060.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Lambda-Functions/Flow_00077.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Lambda-Functions/Flow_00077.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Lambda-Functions/Flow_00061.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Lambda-Functions/Flow_00061.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 22
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Regular Expression/Flow_00042_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Regular Expression/Flow_00042_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 78
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Regular Expression/Flow_00042.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Regular Expression/Flow_00042.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 27
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Field-Sensitivity/Flow_00069_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Field-Sensitivity/Flow_00069_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 71
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Field-Sensitivity/Flow_00003_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Field-Sensitivity/Flow_00003_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 70
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Field-Sensitivity/Flow_00004_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Field-Sensitivity/Flow_00004_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 70
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Field-Sensitivity/Flow_00004.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Field-Sensitivity/Flow_00004.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Field-Sensitivity/Flow_00069.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Field-Sensitivity/Flow_00069.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Field-Sensitivity/Flow_00003.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Field-Sensitivity/Flow_00003.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Loops/Flow_00016.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Loops/Flow_00016.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 27
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Loops/Flow_00016_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Loops/Flow_00016_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 78
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Nested-Calls/Flow_00018_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Nested-Calls/Flow_00018_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 75
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Nested-Calls/Flow_00018.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Nested-Calls/Flow_00018.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 24
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Integer Casting/Flow_00028_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Integer Casting/Flow_00028_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 71
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Integer Casting/Flow_00028.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Integer Casting/Flow_00028.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00053.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00053.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00052.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00052.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00051_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00051_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00050.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00050.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00049.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00049.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00005.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00005.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 24
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00006_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00006_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00049_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00049_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00052_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00052_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00005_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00005_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 75
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00053_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00053_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00054.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00054.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00051.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00051.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00006.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00006.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00050_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00050_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Aggregates/Flow_00054_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Aggregates/Flow_00054_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Inline-Instantiations/Flow_00063.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Inline-Instantiations/Flow_00063.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 24
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Inline-Instantiations/Flow_00064.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Inline-Instantiations/Flow_00064.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 22
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Inline-Instantiations/Flow_00063_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Inline-Instantiations/Flow_00063_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 75
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Inline-Instantiations/Flow_00064_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Inline-Instantiations/Flow_00064_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 73
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Unreachable Flow/Flow_00040.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Unreachable Flow/Flow_00040.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 24
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Unreachable Flow/Flow_00040_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Unreachable Flow/Flow_00040_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 75
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/String-Operations/Flow_00041.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/String-Operations/Flow_00041.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 17
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/String-Operations/Flow_00039.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/String-Operations/Flow_00039.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 26
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/String-Operations/Flow_00039_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/String-Operations/Flow_00039_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 77
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/String-Operations/Flow_00041_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/String-Operations/Flow_00041_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 68
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Flow-Sensitivity/Flow_00068.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Flow-Sensitivity/Flow_00068.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 22
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Flow-Sensitivity/Flow_00034.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Flow-Sensitivity/Flow_00034.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 17
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Flow-Sensitivity/Flow_00059_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Flow-Sensitivity/Flow_00059_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 73
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Flow-Sensitivity/Flow_00068_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Flow-Sensitivity/Flow_00068_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 73
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Flow-Sensitivity/Flow_00066_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Flow-Sensitivity/Flow_00066_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 73
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Flow-Sensitivity/Flow_00034_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Flow-Sensitivity/Flow_00034_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 68
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Flow-Sensitivity/Flow_00066.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Flow-Sensitivity/Flow_00066.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 22
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Flow-Sensitivity/Flow_00071_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Flow-Sensitivity/Flow_00071_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Flow-Sensitivity/Flow_00071.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Flow-Sensitivity/Flow_00071.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "Flows/Flow-Sensitivity/Flow_00059.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Flow-Sensitivity/Flow_00059.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 22
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Flow-Sensitivity/Flow_00070_inplace.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Flow-Sensitivity/Flow_00070_inplace.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 74
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "Flows/Flow-Sensitivity/Flow_00070.cs"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "Flows/Flow-Sensitivity/Flow_00070.cs"
+                },
+                "region": {
+                  "startLine": 1,
+                  "endLine": 23
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

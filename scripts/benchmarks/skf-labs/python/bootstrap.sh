@@ -80,4 +80,7 @@ cd "$BASE_DIR"
   fi
 )
 
-(cd "$BASE_DIR"; ./scripts/benchmarks/skf-labs/python/markup.py "skf-labs/python")
+if [[ "$UPDATE_BENCHMARKS" = "true" ]]; then
+  (cd "$BASE_DIR"; ./scripts/benchmarks/skf-labs/python/markup.py "skf-labs/python")
+fi
+(cd "$BASE_DIR"; cp -r markup/skf-labs/python/* skf-labs/python)

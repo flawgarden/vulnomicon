@@ -19,6 +19,7 @@ env:
   RUN_BENCHMARK_SCRIPT: "./scripts/benchmarks/Juliet/csharp/run.sh"
   RUN_BENCHMARK_OUTPUT: "JulietCSharp-output"
   BOOTSTRAP_SCRIPT: "./scripts/benchmarks/Juliet/csharp/bootstrap.sh"
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
 jobs:
   reference_run:

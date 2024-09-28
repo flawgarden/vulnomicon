@@ -158,6 +158,7 @@ def convert_markup(rule_mappings: dict) -> list[Markup]:
 
 
 def write_sarif(benchmark_path: Path, results: list[tuple[str, dict]]) -> None:
+    os.makedirs(benchmark_path, exist_ok=True)
     truth_sarif = empty_sarif("skf-labs-python")
     updated_results = truth_sarif["runs"][0]["results"]
     for subbench, result in results:
@@ -205,7 +206,8 @@ def main():
         for markup in markups:
             merged_results.extend([(markup.name, result) for result in markup.results])
 
-        write_sarif(Path(args.filepath), merged_results)
+        markup_path = "markup" / Path(args.filepath)
+        write_sarif(markup_path, merged_results)
 
 
 if __name__ == "__main__":
