@@ -55,7 +55,7 @@ fi
   cd BenchmarkJava-mutated;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard 54354b3213124c45527b33e97285a959c7e8dff3
+    git reset --hard 58b320f22f224c6ba62be8494bb130e39d885036
   else
     git pull
   fi
