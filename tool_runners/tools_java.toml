@@ -50,4 +50,4 @@ parse_command = { command = "bentoo", args = "convert snyk" }
 
 [[tools.configs]]
 name = "Java"
-args = ""
+args = "--not-authorized"

@@ -32,4 +32,4 @@ parse_command = { command = "bentoo", args = "convert snyk" }
 
 [[tools.configs]]
 name = "C#"
-args = ""
+args = "--not-authorized"

@@ -39,13 +39,17 @@ else
     exit 1
 fi
 
-wget https://github.com/flawgarden/bentoo/releases/download/latest/$ARCHIVE_NAME
-tar -xf $ARCHIVE_NAME
-rm $ARCHIVE_NAME
-
 if [[ "$UPDATE_BENCHMARKS" = "true" ]]; then
+    wget https://github.com/flawgarden/bentoo/releases/download/latest/$ARCHIVE_NAME
+    tar -xf $ARCHIVE_NAME
+    rm $ARCHIVE_NAME
+
     # Download tool runners
     wget https://github.com/flawgarden/bentoo/releases/download/latest/tool_runners.tar.gz
     tar -xf tool_runners.tar.gz
     rm tool_runners.tar.gz
+else
+    wget https://github.com/flawgarden/bentoo/releases/download/v0.0.1/$ARCHIVE_NAME
+    tar -xf $ARCHIVE_NAME
+    rm $ARCHIVE_NAME
 fi

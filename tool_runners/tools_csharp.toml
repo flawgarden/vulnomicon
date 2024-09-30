@@ -32,13 +32,4 @@ parse_command = { command = "bentoo", args = "convert snyk" }
 
 [[tools.configs]]
 name = "C#"
-args = ""
-
-[[tools]]
-script = "ptai.sh"
-name = "ApplicationInspector"
-parse_command = { command = "bentoo", args = "convert ptai" }
-
-[[tools.configs]]
-name = "C#"
-args = "./aisa_csharp_settings.json"
+args = "--not-authorized"
