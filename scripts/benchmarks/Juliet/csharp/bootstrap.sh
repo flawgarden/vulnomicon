@@ -54,11 +54,14 @@ if [ ! -d "JulietCSharp" ]; then
 # deleting previously needed temporary fix, see https://github.com/dotnet/runtime/issues/17471
 # as Mono improved since Juliet was made, it is no longer necessary
   (cd JulietCSharp/lib; rm "System.Runtime.InteropServices.RuntimeInformation.dll")
+# this is a helper project that is not intended to be tested on
+# removing its .sln so that some tools will not be misdirected by it
+  (cd JulietCSharp/src; rm "TestCaseSupport/TestCaseSupport.sln")
 fi
 
 # the order is important so main Juliet sln will not be counted as a CWE
 if [[ "$UPDATE_BENCHMARKS" = "true" ]]; then
-  (cd "$BASE_DIR"; ./scripts/benchmarks/Juliet/csharp/markup.py)
+  (cd "$BASE_DIR"; ./scripts/benchmarks/Juliet/csharp/markup.py --single-sarif)
 fi
 (cd "$BASE_DIR"/JulietCSharp; ../scripts/benchmarks/Juliet/csharp/create_single_project.py)
 
