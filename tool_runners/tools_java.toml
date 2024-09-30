@@ -1,0 +1,53 @@
+[[tools]]
+script = "insider.sh"
+name = "Insider"
+parse_command = { command = "bentoo", args = "convert insider" }
+
+[[tools.configs]]
+name = "Java"
+args = "--tech java"
+
+[[tools]]
+script = "codeql-nodocker.sh"
+name = "CodeQL"
+parse_command = { command = "bentoo", args = "convert codeql" }
+
+[[tools.configs]]
+name = "Java"
+args = "--tech java"
+
+[[tools]]
+script = "semgrep.sh"
+name = "Semgrep"
+parse_command = { command = "bentoo", args = "convert semgrep" }
+
+[[tools.configs]]
+name = "Java"
+args = ""
+
+[[tools]]
+script = "sonarqube.sh"
+name = "SonarQube"
+parse_command = { command = "bentoo", args = "convert sonarqube" }
+
+[[tools.configs]]
+name = "Java"
+args = ""
+
+[[tools]]
+script = "bearer.sh"
+name = "Bearer"
+parse_command = { command = "bentoo", args = "convert bearer" }
+
+[[tools.configs]]
+name = "Java"
+args = ""
+
+[[tools]]
+script = "snyk.sh"
+name = "Snyk"
+parse_command = { command = "bentoo", args = "convert snyk" }
+
+[[tools.configs]]
+name = "Java"
+args = ""
