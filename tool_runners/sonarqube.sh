@@ -112,8 +112,8 @@ rules='[]'
 
 
 ## WE ARE GOING TO DISCARD RULE CHERRY PICKING. SO ALL RESULTS ARE REPORTED REGARDLESS SO THAT BENCHMARK CAN POPULATE RESULTS & SCORE ACCORDINGLY.
-## The content/data structure returned is controled by SONARQUEBE end server, Benchmark Script picks them accordingly and match them back to test cases and create the score. 
-## If returned data are not structured in a way expected by Benchmark/Score calculator. Example: CWE/DataPoint missed then results will not be counted/scored. This can end up in in-correct/Lower Score calculation. 
+## The content/data structure returned is controled by SONARQUEBE end server, Benchmark Script picks them accordingly and match them back to test cases and create the score.
+## If returned data are not structured in a way expected by Benchmark/Score calculator. Example: CWE/DataPoint missed then results will not be counted/scored. This can end up in in-correct/Lower Score calculation.
 ## rules_count=$(curl --silent -u "$sonar_token:" "$sonar_host/api/rules/search?p=1&ps=1" | jq -r '.total')
 ##page=1
 ##echo "rule count is: $rules_count"
