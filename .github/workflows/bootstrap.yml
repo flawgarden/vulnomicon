@@ -25,9 +25,9 @@ jobs:
           git \
           openjdk-11-jdk \
           openjdk-11-jre-headless \
-          openjdk-17-jdk \
-          openjdk-17-jre-headless \
           maven
+        wget https://download.oracle.com/java/22/archive/jdk-22.0.1_linux-x64_bin.deb -O jdk-22.0.1_linux-x64_bin.deb
+        sudo dpkg -i jdk-22.0.1_linux-x64_bin.deb
 
     - name: Install .NET
       uses: actions/setup-dotnet@v4
@@ -44,5 +44,5 @@ jobs:
     - name: Bootstrap
       run: |
         export VULNOMICON_JAVA_HOME_11=/usr/lib/jvm/java-11-openjdk-amd64/
-        export VULNOMICON_JAVA_HOME_17=/usr/lib/jvm/java-17-openjdk-amd64/
+        export VULNOMICON_JAVA_HOME_22=/usr/lib/jvm/jdk-22-oracle-x64/
         ./bootstrap.sh --exit-on-error
