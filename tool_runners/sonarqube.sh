@@ -20,7 +20,7 @@ requireCommand docker
 requireCommand jq
 
 entry_point=$1
-cd $entry_point
+cd "$entry_point" || exit
 echo "$entry_point" >> /dev/stderr
 
 # Check for install/updates at https://github.com/SonarSource/sonarqube
@@ -90,7 +90,7 @@ sonar_token=$(curl "$sonar_host/api/user_tokens/generate" --silent -u "$sonar_us
 echo "Starting scan (might take some time!)" >> /dev/stderr
 
 # run scan (using net=host to be able to connect to localhost sonarqube)
-docker run --env SONAR_SCANNER_OPTS=-Xmx4g --net=host --rm -v ~/.m2:/root/.m2 -v "$(pwd)":"/benchmark" -w "/benchmark" sonarsource/sonar-scanner-cli \
+docker run --env SONAR_SCANNER_OPTS=-Xmx4g --net=host --rm -v ~/.m2:/root/.m2 -v "$(pwd):/benchmark" -w "/benchmark" sonarsource/sonar-scanner-cli \
   -Dsonar.java.binaries="." -Dsonar.scm.disabled="true" -Dsonar.projectKey="$sonar_project" -Dsonar.host.url="$sonar_host" -Dsonar.login="$sonar_token" \
   -Dsonar.sources="." > /dev/null
 
@@ -107,8 +107,8 @@ result_filename="sonarqube-v$sonarqube_version.json"
 
 # SonarQube does not provide a download option so we've to create the result file manually :(
 
-result='{"issues":[], "hotspots": []}'
-rules='[]'
+# result='{"issues":[], "hotspots": []}'
+# rules='[]'
 
 
 ## WE ARE GOING TO DISCARD RULE CHERRY PICKING. SO ALL RESULTS ARE REPORTED REGARDLESS SO THAT BENCHMARK CAN POPULATE RESULTS & SCORE ACCORDINGLY.
@@ -138,11 +138,11 @@ echo '{"issues":[], "hotspots": []}' > resdump.json;
 
 while (((page - 1) * elements_per_request < issues_count)); do
  cat resdump.json > buffdump.json;
- itemcount=$(($page * $elements_per_request))
+ itemcount=$((page * elements_per_request))
  echo "processing Vulnerablity issues, page: $page up to $itemcount items out of total $issues_count" >> /dev/stderr
  issues_page=$(curl --silent -u "$sonar_token:" "$sonar_host/api/issues/search?types=VULNERABILITY&p=$page&ps=$elements_per_request&componentKeys=$sonar_project" | jq '.issues')
  if [ "$issues_page" ]; then
-   cat buffdump.json | jq ".issues += ${issues_page}" > resdump.json;
+   jq ".issues += ${issues_page}" < buffdump.json  > resdump.json;
  else
    echo "Empty. Error reading Vulnerability issues at Page:$page !" >> /dev/stderr
  fi
@@ -156,11 +156,11 @@ echo "Hotspot Count is: $hotspot_count" >> /dev/stderr
 cat resdump.json > buffdump.json
 while (((page - 1) * elements_per_request < hotspot_count)); do
   cat resdump.json > buffdump.json
-  itemcount=$(($page * $elements_per_request))
+  itemcount=$((page * elements_per_request))
   echo "processing Hotspots, page: $page up to $itemcount items out of total $hotspot_count" >> /dev/stderr
   hotspot_page=$(curl --silent -u "$sonar_token:" "$sonar_host/api/hotspots/search?projectKey=$sonar_project&p=$page&ps=$elements_per_request" | jq '.hotspots')
   if [ "$hotspot_page" ]; then
-    cat buffdump.json | jq ".hotspots += ${hotspot_page}" > resdump.json;
+    jq ".hotspots += ${hotspot_page}" < buffdump.json > resdump.json;
   else
     echo "Empty. Error reading Hotspot at Page:$page !" >> /dev/stderr
   fi
@@ -176,8 +176,8 @@ echo "Shutting down SonarQube" >> /dev/stderr
 
 docker stop "$container_id" > /dev/null
 
-docker run --rm -v "${PWD}:/src" ubuntu sh -c "chown $(id -u $USER):$(id -g $USER) -R /src" > /dev/null
+docker run --rm -v "${PWD}:/src" ubuntu sh -c "chown $(id -u "$USER"):$(id -g "$USER") -R /src" > /dev/null
 
 result_file="$entry_point/$result_filename"
 
-cat $result_file
+cat "$result_file"
