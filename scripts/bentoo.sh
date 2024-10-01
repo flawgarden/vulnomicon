@@ -6,6 +6,15 @@ ARCH=$(uname -m)
 
 cd "$BASE_DIR" || exit;
 
+UPDATE_BENTOO="false"
+
+for OPT in "$@"; do
+  if [[ "$OPT" = *"--update"* ]]; then
+      UPDATE_BENTOO="true"
+      shift 1
+  fi
+done
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     if [[ "$ARCH" == "x86_64" ]]; then
         echo "Downloading bentoo binary for Mac OS / x86_64"
@@ -30,11 +39,17 @@ else
     exit 1
 fi
 
-wget https://github.com/flawgarden/bentoo/releases/download/latest/$ARCHIVE_NAME
-tar -xf $ARCHIVE_NAME
-rm $ARCHIVE_NAME
+if [[ "$UPDATE_BENTOO" = "true" ]]; then
+    wget https://github.com/flawgarden/bentoo/releases/download/latest/$ARCHIVE_NAME
+    tar -xf $ARCHIVE_NAME
+    rm $ARCHIVE_NAME
 
-# Download tool runners
-wget https://github.com/flawgarden/bentoo/releases/download/latest/tool_runners.tar.gz
-tar -xf tool_runners.tar.gz
-rm tool_runners.tar.gz
+    # Download tool runners
+    wget https://github.com/flawgarden/bentoo/releases/download/latest/tool_runners.tar.gz
+    tar -xf tool_runners.tar.gz
+    rm tool_runners.tar.gz
+else
+    wget https://github.com/flawgarden/bentoo/releases/download/v0.0.1/$ARCHIVE_NAME
+    tar -xf $ARCHIVE_NAME
+    rm $ARCHIVE_NAME
+fi

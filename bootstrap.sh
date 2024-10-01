@@ -46,4 +46,4 @@ cd "$BASE_DIR"
 (cd "$BASE_DIR"; ./scripts/benchmarks/skf-labs/bootstrap.sh "$BOOTSTRAP_OPTIONS")
 (cd "$BASE_DIR"; ./scripts/benchmarks/FlowBlot/bootstrap.sh "$BOOTSTRAP_OPTIONS")
 
-(cd "$BASE_DIR"; ./scripts/bentoo.sh)
+(cd "$BASE_DIR"; ./scripts/bentoo.sh "$BOOTSTRAP_OPTIONS")

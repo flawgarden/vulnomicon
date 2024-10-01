@@ -1,0 +1,35 @@
+[[tools]]
+script = "insider.sh"
+name = "Insider"
+parse_command = { command = "bentoo", args = "convert insider" }
+
+[[tools.configs]]
+name = "C#"
+args = "--tech csharp"
+
+[[tools]]
+script = "codeql-nodocker.sh"
+name = "CodeQL"
+parse_command = { command = "bentoo", args = "convert codeql" }
+
+[[tools.configs]]
+name = "C#"
+args = "--tech csharp"
+
+[[tools]]
+script = "semgrep.sh"
+name = "Semgrep"
+parse_command = { command = "bentoo", args = "convert semgrep" }
+
+[[tools.configs]]
+name = "C#"
+args = ""
+
+[[tools]]
+script = "snyk.sh"
+name = "Snyk"
+parse_command = { command = "bentoo", args = "convert snyk" }
+
+[[tools.configs]]
+name = "C#"
+args = "--not-authorized"

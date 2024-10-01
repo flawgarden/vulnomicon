@@ -1,0 +1,44 @@
+[[tools]]
+script = "codeql-nodocker.sh"
+name = "CodeQL"
+parse_command = { command = "bentoo", args = "convert codeql" }
+
+[[tools.configs]]
+name = "Python"
+args = "--tech python"
+
+[[tools]]
+script = "semgrep.sh"
+name = "Semgrep"
+parse_command = { command = "bentoo", args = "convert semgrep" }
+
+[[tools.configs]]
+name = "Python"
+args = ""
+
+[[tools]]
+script = "bearer.sh"
+name = "Bearer"
+parse_command = { command = "bentoo", args = "convert bearer" }
+
+[[tools.configs]]
+name = "Python"
+args = ""
+
+[[tools]]
+script = "bandit.sh"
+name = "Bandit"
+parse_command = { command = "bentoo", args = "convert bandit" }
+
+[[tools.configs]]
+name = "Python"
+args = ""
+
+[[tools]]
+script = "snyk.sh"
+name = "Snyk"
+parse_command = { command = "bentoo", args = "convert snyk" }
+
+[[tools.configs]]
+name = "Python"
+args = "--not-authorized"
