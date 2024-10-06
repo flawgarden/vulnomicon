@@ -30,8 +30,8 @@ jobs:
     - name: Install Python requirements
       run: pip install -r ./requirements.txt
 
-    - name: Install Java
-    - uses: actions/setup-go@v5
+    - name: Install Go
+      run: actions/setup-go@v5
 
     - name: Bootstrap
       run: |
