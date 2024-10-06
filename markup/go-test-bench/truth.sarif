@@ -1,388 +1,111 @@
 {
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
   "runs": [
     {
       "results": [
         {
-          "kind": "fail",
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "cmd/std/app.go"
-                },
-                "region": {
-                  "endColumn": 12,
-                  "endLine": 22,
-                  "startColumn": 12,
-                  "startLine": 22
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "Use of net/http serve function that has no support for setting timeouts"
-          },
-          "ruleId": "CWE-676"
-        },
-        {
-          "kind": "fail",
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "cmd/julienschmidt/app.go"
-                },
-                "region": {
-                  "endColumn": 12,
-                  "endLine": 22,
-                  "startColumn": 12,
-                  "startLine": 22
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "Use of net/http serve function that has no support for setting timeouts"
-          },
-          "ruleId": "CWE-676"
-        },
-        {
-          "kind": "fail",
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "cmd/chi/app.go"
-                },
-                "region": {
-                  "endColumn": 12,
-                  "endLine": 22,
-                  "startColumn": 12,
-                  "startLine": 22
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "Use of net/http serve function that has no support for setting timeouts"
-          },
-          "ruleId": "CWE-676"
-        },
-        {
-          "kind": "fail",
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "internal/common/templateFns.go"
-                },
-                "region": {
-                  "endColumn": 9,
-                  "endLine": 66,
-                  "startColumn": 9,
-                  "startLine": 66
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "The used method does not auto-escape HTML. This can potentially lead to 'Cross-site Scripting' vulnerabilities, in case the attacker controls the input."
-          },
-          "ruleId": "CWE-79"
-        },
-        {
-          "kind": "fail",
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "internal/injection/cmdi/cmd-injection.go"
-                },
-                "region": {
-                  "endColumn": 9,
-                  "endLine": 84,
-                  "startColumn": 9,
-                  "startLine": 84
                 }
               }
             }
           ],
           "message": {
-            "text": "Subprocess launched with a potential tainted input or cmd arguments"
+            "text": "cmdi"
           },
+          "kind": "fail",
           "ruleId": "CWE-78"
         },
         {
-          "kind": "fail",
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "internal/injection/cmdi/cmd-injection.go"
-                },
-                "region": {
-                  "endColumn": 9,
-                  "endLine": 53,
-                  "startColumn": 9,
-                  "startLine": 53
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "Subprocess launched with a potential tainted input or cmd arguments"
-          },
-          "ruleId": "CWE-78"
-        },
-        {
-          "kind": "fail",
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "internal/injection/sqli/sql-injection.go"
-                },
-                "region": {
-                  "endColumn": 12,
-                  "endLine": 56,
-                  "startColumn": 12,
-                  "startLine": 56
                 }
               }
             }
           ],
           "message": {
-            "text": "SQL string formatting"
+            "text": "sqli"
           },
+          "kind": "fail",
           "ruleId": "CWE-89"
         },
         {
-          "kind": "fail",
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "internal/pathtraversal/path-traversal.go"
-                },
-                "region": {
-                  "endColumn": 13,
-                  "endLine": 110,
-                  "startColumn": 13,
-                  "startLine": 110
                 }
               }
             }
           ],
           "message": {
-            "text": "Potential file inclusion via variable"
+            "text": "pathtraver"
           },
+          "kind": "fail",
           "ruleId": "CWE-22"
         },
         {
-          "kind": "fail",
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "internal/pathtraversal/path-traversal.go"
-                },
-                "region": {
-                  "endColumn": 13,
-                  "endLine": 87,
-                  "startColumn": 13,
-                  "startLine": 87
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "Potential file inclusion via variable"
-          },
-          "ruleId": "CWE-22"
-        },
-        {
-          "kind": "fail",
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "internal/pathtraversal/path-traversal.go"
-                },
-                "region": {
-                  "endColumn": 17,
-                  "endLine": 74,
-                  "startColumn": 17,
-                  "startLine": 74
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "Potential file inclusion via variable"
-          },
-          "ruleId": "CWE-22"
-        },
-        {
-          "kind": "fail",
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "cmd/go-swagger/regen/regen.go"
-                },
-                "region": {
-                  "endColumn": 12,
-                  "endLine": 89,
-                  "startColumn": 12,
-                  "startLine": 89
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "Potential file inclusion via variable"
-          },
-          "ruleId": "CWE-22"
-        },
-        {
-          "kind": "fail",
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "cmd/go-swagger/regen/regen.go"
-                },
-                "region": {
-                  "endColumn": 17,
-                  "endLine": 57,
-                  "startColumn": 17,
-                  "startLine": 57
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "Potential file inclusion via variable"
-          },
-          "ruleId": "CWE-22"
-        },
-        {
-          "kind": "fail",
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "internal/ssrf/ssrf.go"
-                },
-                "region": {
-                  "endColumn": 16,
-                  "endLine": 51,
-                  "startColumn": 16,
-                  "startLine": 51
                 }
               }
             }
           ],
           "message": {
-            "text": "Potential HTTP request made with variable url"
+            "text": "ssrf"
           },
-          "ruleId": "CWE-88"
+          "kind": "fail",
+          "ruleId": "CWE-918"
         },
         {
-          "kind": "fail",
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "internal/common/commontest/request_gen.go"
-                },
-                "region": {
-                  "endColumn": 37,
-                  "endLine": 68,
-                  "startColumn": 37,
-                  "startLine": 68
+                  "uri": "internal/unvalidated/unvalidated-redirect.go"
                 }
               }
             }
           ],
           "message": {
-            "text": "Implicit memory aliasing in for loop."
+            "text": "unvalidated-redirect"
           },
-          "ruleId": "CWE-118"
+          "kind": "fail",
+          "ruleId": "CWE-601"
         },
         {
-          "kind": "fail",
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "internal/pathtraversal/path-traversal.go"
-                },
-                "region": {
-                  "endColumn": 20,
-                  "endLine": 103,
-                  "startColumn": 20,
-                  "startLine": 103
+                  "uri": "internal/xss/xss.go"
                 }
               }
             }
           ],
           "message": {
-            "text": "Expect WriteFile permissions to be 0600 or less"
+            "text": "xss"
           },
-          "ruleId": "CWE-276"
-        },
-        {
           "kind": "fail",
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "internal/injection/sqli/sql-injection.go"
-                },
-                "region": {
-                  "endColumn": 2,
-                  "endLine": 84,
-                  "startColumn": 2,
-                  "startLine": 84
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "Errors unhandled."
-          },
-          "ruleId": "CWE-703"
-        },
-        {
-          "kind": "fail",
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "cmd/exercise/exercise.go"
-                },
-                "region": {
-                  "endColumn": 4,
-                  "endLine": 87,
-                  "startColumn": 4,
-                  "startLine": 87
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "Errors unhandled."
-          },
-          "ruleId": "CWE-703"
+          "ruleId": "CWE-79"
         }
       ],
       "tool": {
         "driver": {
-          "name": "snyk"
+          "name": "go-test-bench"
         }
       }
     }
-  ],
-  "version": "2.1.0"
+  ]
 }
