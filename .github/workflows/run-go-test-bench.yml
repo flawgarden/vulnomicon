@@ -31,7 +31,7 @@ jobs:
       run: pip install -r ./requirements.txt
 
     - name: Install Go
-      run: actions/setup-go@v5
+      uses: actions/setup-go@v5
 
     - name: Bootstrap
       run: |
