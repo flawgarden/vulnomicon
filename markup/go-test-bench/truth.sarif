@@ -1,0 +1,111 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "results": [
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "internal/injection/cmdi/cmd-injection.go"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "cmdi"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-78"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "internal/injection/sqli/sql-injection.go"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "sqli"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-89"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "internal/pathtraversal/path-traversal.go"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "pathtraver"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-22"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "internal/ssrf/ssrf.go"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "ssrf"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-918"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "internal/unvalidated/unvalidated-redirect.go"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "unvalidated-redirect"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-601"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "internal/xss/xss.go"
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "xss"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-79"
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "go-test-bench"
+        }
+      }
+    }
+  ]
+}

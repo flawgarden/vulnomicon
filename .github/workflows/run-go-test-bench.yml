@@ -1,0 +1,50 @@
+name: "Run go-test-bench"
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'scripts/benchmarks/go-test-bench/bootstrap.sh'
+      - 'scripts/benchmarks/go-test-bench/run.sh'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'scripts/benchmarks/go-test-bench/bootstrap.sh'
+      - 'scripts/benchmarks/go-test-bench/run.sh'
+  workflow_dispatch:
+
+env:
+  BENTOO_SCRIPT: "./scripts/bentoo.sh"
+  BENCHMARK_NAME: "go-test-bench"
+  RUN_BENCHMARK_SCRIPT: "./scripts/benchmarks/go-test-bench/run.sh"
+  RUN_BENCHMARK_OUTPUT: "go-test-bench-output"
+  BOOTSTRAP_SCRIPT: "./scripts/benchmarks/go-test-bench/bootstrap.sh"
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+jobs:
+  reference_run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install Python requirements
+      run: pip install -r ./requirements.txt
+
+    - name: Install Go
+      uses: actions/setup-go@v5
+
+    - name: Bootstrap
+      run: |
+        ${{ env.BOOTSTRAP_SCRIPT }} --exit-on-error
+        ${{ env.BENTOO_SCRIPT }}
+
+    - name: Reference run
+      shell: bash
+      run: |
+         ${{ env.RUN_BENCHMARK_SCRIPT }}
+
+    - name: Archive output
+      uses: actions/upload-artifact@v4
+      with:
+        name: "${{ env.BENCHMARK_NAME }}-output"
+        path: ${{ env.RUN_BENCHMARK_OUTPUT }}
