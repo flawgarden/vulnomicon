@@ -1,0 +1,157 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "results": [
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/cmdi.go"
+                }
+                "region": {
+                  "startLine": 27
+                  "endLine": 36,
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "cmdi"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-78"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/cmdi.go"
+                }
+                "region": {
+                  "startLine": 38
+                  "endLine": 47,
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "cmdi"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-78"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/cmdi.go"
+                }
+                "region": {
+                  "startLine": 49
+                  "endLine": 56,
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "cmdi"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-78"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/cmdi.go"
+                }
+                "region": {
+                  "startLine": 58
+                  "endLine": 73,
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "cmdi"
+          },
+          "kind": "pass",
+          "ruleId": "CWE-78"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/cors.go"
+                }
+                "region": {
+                  "startLine": 22
+                  "endLine": 37,
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "cors"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-942"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/cors.go"
+                }
+                "region": {
+                  "startLine": 39
+                  "endLine": 53,
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "cors"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-942"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/cors.go"
+                }
+                "region": {
+                  "startLine": 55
+                  "endLine": 74,
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "cors"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-942"
+        },
+        {
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "go-sec-code"
+        }
+      }
+    }
+  ]
+}
