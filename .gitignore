@@ -6,5 +6,6 @@
 /sast-rules*
 /skf-labs*
 /go-test-bench*
+/go-sec-code*
 
 /scripts/benchmarks/skf-labs/python/metadata/
