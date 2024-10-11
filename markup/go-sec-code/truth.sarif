@@ -825,7 +825,7 @@
             }
           ],
           "message": {
-            "text": "cmdi"
+            "text": "traversal"
           },
           "kind": "fail",
           "ruleId": "CWE-22"
