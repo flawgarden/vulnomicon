@@ -12,16 +12,76 @@
                   "uri": "controllers/traversal.go"
                 },
                 "region": {
-                  "startLine": 29,
-                  "endLine": 36
+                  "startLine": 28,
+                  "endLine": 35
                 }
               }
             }
           ],
           "message": {
-            "text": "cmdi"
+            "text": "traversal"
           },
           "kind": "fail",
+          "ruleId": "CWE-22"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/traversal.go"
+                },
+                "region": {
+                  "startLine": 37,
+                  "endLine": 45
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "traversal"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-22"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/traversal.go"
+                },
+                "region": {
+                  "startLine": 47,
+                  "endLine": 59
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "traversal"
+          },
+          "kind": "pass",
+          "ruleId": "CWE-22"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/traversal.go"
+                },
+                "region": {
+                  "startLine": 61,
+                  "endLine": 73
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "traversal"
+          },
+          "kind": "pass",
           "ruleId": "CWE-22"
         },
         {
@@ -39,10 +99,10 @@
             }
           ],
           "message": {
-            "text": "cmdi"
+            "text": "sqli"
           },
           "kind": "fail",
-          "ruleId": "CWE-22"
+          "ruleId": "CWE-89"
         },
         {
           "locations": [
@@ -52,8 +112,8 @@
                   "uri": "controllers/jsonp.go"
                 },
                 "region": {
-                  "startLine": 23,
-                  "endLine": 35
+                  "startLine": 22,
+                  "endLine": 34
                 }
               }
             }
@@ -72,7 +132,160 @@
                   "uri": "controllers/jsonp.go"
                 },
                 "region": {
-                  "startLine": 37,
+                  "startLine": 36,
+                  "endLine": 55
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "xss"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-79"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/jsonp.go"
+                },
+                "region": {
+                  "startLine": 57,
+                  "endLine": 76
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "xss"
+          },
+          "kind": "pass",
+          "ruleId": "CWE-79"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/xxe.go"
+                },
+                "region": {
+                  "startLine": 25,
+                  "endLine": 32
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/xxe.go"
+                },
+                "region": {
+                  "startLine": 34,
+                  "endLine": 46
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "xxe"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-611"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/xxe.go"
+                },
+                "region": {
+                  "startLine": 48,
+                  "endLine": 55
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/xxe.go"
+                },
+                "region": {
+                  "startLine": 57,
+                  "endLine": 73
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "xxe"
+          },
+          "kind": "pass",
+          "ruleId": "CWE-611"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/xss.go"
+                },
+                "region": {
+                  "startLine": 35,
+                  "endLine": 39
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "xss"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-79"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/xss.go"
+                },
+                "region": {
+                  "startLine": 41,
+                  "endLine": 48
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/xss.go"
+                },
+                "region": {
+                  "startLine": 67,
+                  "endLine": 72
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "xss"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-79"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/xss.go"
+                },
+                "region": {
+                  "startLine": 50,
                   "endLine": 56
                 }
               }
@@ -89,40 +302,40 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "controllers/xxe.go"
+                  "uri": "controllers/xss.go"
                 },
                 "region": {
-                  "startLine": 26,
-                  "endLine": 33
+                  "startLine": 74,
+                  "endLine": 80
                 }
               }
             }
           ],
           "message": {
-            "text": "xxe"
+            "text": "xss"
           },
-          "kind": "fail",
-          "ruleId": "CWE-611"
+          "kind": "pass",
+          "ruleId": "CWE-79"
         },
         {
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "controllers/xxe.go"
+                  "uri": "controllers/xss.go"
                 },
                 "region": {
-                  "startLine": 35,
-                  "endLine": 47
+                  "startLine": 82,
+                  "endLine": 80
                 }
               }
             }
           ],
           "message": {
-            "text": "xxe"
+            "text": "xss"
           },
-          "kind": "fail",
-          "ruleId": "CWE-611"
+          "kind": "pass",
+          "ruleId": "CWE-79"
         },
         {
           "locations": [
@@ -132,8 +345,8 @@
                   "uri": "controllers/ssti.go"
                 },
                 "region": {
-                  "startLine": 22,
-                  "endLine": 38
+                  "startLine": 21,
+                  "endLine": 37
                 }
               }
             }
@@ -149,20 +362,20 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "controllers/upload.go"
+                  "uri": "controllers/ssti.go"
                 },
                 "region": {
-                  "startLine": 20,
-                  "endLine": 22
+                  "startLine": 39,
+                  "endLine": 43
                 }
               }
             }
           ],
           "message": {
-            "text": "traversal"
+            "text": "ssti"
           },
-          "kind": "fail",
-          "ruleId": "CWE-22"
+          "kind": "pass",
+          "ruleId": "CWE-94"
         },
         {
           "locations": [
@@ -172,37 +385,59 @@
                   "uri": "controllers/upload.go"
                 },
                 "region": {
-                  "startLine": 24,
-                  "endLine": 34
+                  "startLine": 19,
+                  "endLine": 21
                 }
               }
-            }
-          ],
-          "message": {
-            "text": "traversal"
-          },
-          "kind": "fail",
-          "ruleId": "CWE-22"
-        },
-        {
-          "locations": [
+            },
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "controllers/cors.go"
+                  "uri": "controllers/upload.go"
                 },
                 "region": {
                   "startLine": 23,
-                  "endLine": 38
+                  "endLine": 33
                 }
               }
             }
           ],
           "message": {
-            "text": "cors"
+            "text": "traversal"
           },
           "kind": "fail",
-          "ruleId": "CWE-942"
+          "ruleId": "CWE-22"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/upload.go"
+                },
+                "region": {
+                  "startLine": 35,
+                  "endLine": 37
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/upload.go"
+                },
+                "region": {
+                  "startLine": 39,
+                  "endLine": 55
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "traversal"
+          },
+          "kind": "pass",
+          "ruleId": "CWE-22"
         },
         {
           "locations": [
@@ -212,128 +447,208 @@
                   "uri": "controllers/cors.go"
                 },
                 "region": {
-                  "startLine": 40,
-                  "endLine": 54
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "cors"
-          },
-          "kind": "fail",
-          "ruleId": "CWE-942"
-        },
-        {
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "controllers/sqli.go"
-                },
-                "region": {
-                  "startLine": 53,
-                  "endLine": 75
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "sqli"
-          },
-          "kind": "fail",
-          "ruleId": "CWE-89"
-        },
-        {
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "controllers/sqli.go"
-                },
-                "region": {
-                  "startLine": 77,
-                  "endLine": 99
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "sqli"
-          },
-          "kind": "fail",
-          "ruleId": "CWE-89"
-        },
-        {
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "controllers/sqli.go"
-                },
-                "region": {
-                  "startLine": 101,
-                  "endLine": 120
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "sqli"
-          },
-          "kind": "fail",
-          "ruleId": "CWE-89"
-        },
-        {
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "controllers/sqli.go"
-                },
-                "region": {
-                  "startLine": 122,
-                  "endLine": 150
-                }
-              }
-            }
-          ],
-          "message": {
-            "text": "sqli"
-          },
-          "kind": "fail",
-          "ruleId": "CWE-89"
-        },
-        {
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "controllers/cmdi.go"
-                },
-                "region": {
-                  "startLine": 28,
+                  "startLine": 22,
                   "endLine": 37
                 }
               }
             }
           ],
           "message": {
-            "text": "cmdi"
+            "text": "cors"
           },
           "kind": "fail",
-          "ruleId": "CWE-77"
+          "ruleId": "CWE-942"
         },
         {
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "controllers/cmdi.go"
+                  "uri": "controllers/cors.go"
                 },
                 "region": {
                   "startLine": 39,
-                  "endLine": 48
+                  "endLine": 53
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "cors"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-942"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/cors.go"
+                },
+                "region": {
+                  "startLine": 55,
+                  "endLine": 74
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "cors"
+          },
+          "kind": "pass",
+          "ruleId": "CWE-942"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/sqli.go"
+                },
+                "region": {
+                  "startLine": 52,
+                  "endLine": 74
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "sqli"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-89"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/sqli.go"
+                },
+                "region": {
+                  "startLine": 76,
+                  "endLine": 98
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "sqli"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-89"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/sqli.go"
+                },
+                "region": {
+                  "startLine": 100,
+                  "endLine": 119
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "sqli"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-89"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/sqli.go"
+                },
+                "region": {
+                  "startLine": 121,
+                  "endLine": 149
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "sqli"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-89"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/sqli.go"
+                },
+                "region": {
+                  "startLine": 151,
+                  "endLine": 176
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "sqli"
+          },
+          "kind": "pass",
+          "ruleId": "CWE-89"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/sqli.go"
+                },
+                "region": {
+                  "startLine": 178,
+                  "endLine": 200
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "sqli"
+          },
+          "kind": "pass",
+          "ruleId": "CWE-89"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/sqli.go"
+                },
+                "region": {
+                  "startLine": 202,
+                  "endLine": 218
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "sqli"
+          },
+          "kind": "pass",
+          "ruleId": "CWE-89"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/cmdi.go"
+                },
+                "region": {
+                  "startLine": 27,
+                  "endLine": 36
                 }
               }
             }
@@ -352,8 +667,8 @@
                   "uri": "controllers/cmdi.go"
                 },
                 "region": {
-                  "startLine": 50,
-                  "endLine": 57
+                  "startLine": 38,
+                  "endLine": 47
                 }
               }
             }
@@ -363,6 +678,157 @@
           },
           "kind": "fail",
           "ruleId": "CWE-77"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/cmdi.go"
+                },
+                "region": {
+                  "startLine": 49,
+                  "endLine": 56
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "cmdi"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-77"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/cmdi.go"
+                },
+                "region": {
+                  "startLine": 58,
+                  "endLine": 73
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "cmdi"
+          },
+          "kind": "pass",
+          "ruleId": "CWE-77"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/ssrf.go"
+                },
+                "region": {
+                  "startLine": 27,
+                  "endLine": 39
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "ssrf"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-918"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/ssrf.go"
+                },
+                "region": {
+                  "startLine": 46,
+                  "endLine": 65
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "ssrf"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-918"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/ssrf.go"
+                },
+                "region": {
+                  "startLine": 67,
+                  "endLine": 85
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "ssrf"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-918"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/ssrf.go"
+                },
+                "region": {
+                  "startLine": 87,
+                  "endLine": 106
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "ssrf"
+          },
+          "kind": "pass",
+          "ruleId": "CWE-918"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/zipslip.go"
+                },
+                "region": {
+                  "startLine": 18,
+                  "endLine": 20
+                }
+              }
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "controllers/zipslip.go"
+                },
+                "region": {
+                  "startLine": 22,
+                  "endLine": 70
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "cmdi"
+          },
+          "kind": "fail",
+          "ruleId": "CWE-22"
         }
       ],
       "tool": {
