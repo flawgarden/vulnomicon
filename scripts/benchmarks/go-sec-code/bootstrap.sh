@@ -12,6 +12,17 @@ requireCommand git
 requireCommand docker
 requireCommand go
 requireCommand python3
+requireCommand pkg-config
+
+requireLibrary() {
+  if ! pkg-config --exists "$1" &> /dev/null
+  then
+    echo "$1 is required. Please install it and then try again."
+    exit 1
+  fi
+}
+
+requireLibrary libxml-2.0
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 BASE_DIR="$(cd "$SCRIPT_DIR"/../../../ && pwd)"
@@ -49,5 +60,5 @@ fi
   fi
 )
 
-(cd "$BASE_DIR"/go-sec-code; go build ./...)
+(cd "$BASE_DIR"/go-sec-code; go mod edit -require=github.com/lestrrat-go/libxml2@v0.0.0-20240905100032-c934e3fcb9d3; go mod tidy; go build ./...)
 (cd "$BASE_DIR"; cp -r markup/go-sec-code/* go-sec-code)
