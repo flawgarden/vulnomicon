@@ -1,0 +1,59 @@
+name: "Run go-owasp-converted-mutated"
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'scripts/benchmarks/go-owasp-converted/bootstrap-mutated.sh'
+      - 'scripts/benchmarks/go-owasp-converted/run-mutated.sh'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'scripts/benchmarks/go-owasp-converted/bootstrap-mutated.sh'
+      - 'scripts/benchmarks/go-owasp-converted/run-mutated.sh'
+  workflow_dispatch:
+
+env:
+  BENTOO_SCRIPT: "./scripts/bentoo.sh"
+  BENCHMARK_NAME: "go-owasp-converted-mutated"
+  RUN_BENCHMARK_SCRIPT: "./scripts/benchmarks/go-owasp-converted/run-mutated.sh"
+  RUN_BENCHMARK_OUTPUT: "go-owasp-converted-mutated-output"
+  BOOTSTRAP_SCRIPT: "./scripts/benchmarks/go-owasp-converted/bootstrap-mutated.sh"
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+jobs:
+  reference_run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install Python requirements
+      run: pip install -r ./requirements.txt
+
+    - name: Install libs needed for go-owasp-converted-mutated
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y -q --no-install-recommends \
+          libxml2-dev
+
+    - name: Install packages
+      run: pip install -r ./requirements.txt
+
+    - name: Install Go
+      uses: actions/setup-go@v5
+
+    - name: Bootstrap
+      run: |
+        ${{ env.BOOTSTRAP_SCRIPT }} --exit-on-error
+        ${{ env.BENTOO_SCRIPT }}
+
+    - name: Reference run
+      shell: bash
+      run: |
+         ${{ env.RUN_BENCHMARK_SCRIPT }}
+
+    - name: Archive output
+      uses: actions/upload-artifact@v4
+      with:
+        name: "${{ env.BENCHMARK_NAME }}-output"
+        path: ${{ env.RUN_BENCHMARK_OUTPUT }}
