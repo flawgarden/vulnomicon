@@ -54,11 +54,10 @@ fi
   cd go-sec-code-mutated;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard 6a928f5d2990bfa739261b2b4d36679a65063568
+    git reset --hard d80d08ea301d5543cc63445fd90d8193ba5ab3bb
   else
     git pull
   fi
 )
 
 (cd "$BASE_DIR"/go-sec-code-mutated; go mod edit -require=github.com/lestrrat-go/libxml2@v0.0.0-20240905100032-c934e3fcb9d3; go mod tidy; go build ./...)
-(cd "$BASE_DIR"; cp -r markup/go-sec-code-mutated/* go-sec-code-mutated)
