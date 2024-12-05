@@ -9,3 +9,4 @@
 /go-sec-code*
 
 /scripts/benchmarks/skf-labs/python/metadata/
+/go-owasp-converted*
