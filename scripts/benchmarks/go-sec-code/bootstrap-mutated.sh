@@ -54,7 +54,7 @@ fi
   cd go-sec-code-mutated;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard 6a928f5d2990bfa739261b2b4d36679a65063568
+    git reset --hard d80d08ea301d5543cc63445fd90d8193ba5ab3bb
   else
     git pull
   fi
