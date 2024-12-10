@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-BASE_DIR="$(cd "$SCRIPT_DIR"/../../../ && pwd)"
+BASE_DIR="$(cd "$SCRIPT_DIR"/../../../../ && pwd)"
 
 cd "$BASE_DIR" || exit;
 
@@ -18,7 +18,7 @@ fi
 export JAVA_HOME="${VULNOMICON_JAVA_HOME_8}"
 
 echo "Warning: reality-check is a big benchmark"
-echo "Running all available tools on it will take about 24 hours"
+echo "Running all available tools on it can take a vast amount of time"
 echo -n "Proceed (yes/no)? "
 read -r proceed
 
@@ -29,13 +29,23 @@ fi
 
 if [ ! -f "bentoo" ]; then
     echo "Please run bentoo.sh beforehand"
+    exit 1
 fi
 
 if [ ! -d "tool_runners" ]; then
     echo "Please run bentoo.sh beforehand"
+    exit 1
+fi
+
+if ! docker ps -a &> /dev/null
+then
+    echo "Please run docker daemon beforehand"
+    exit 1
 fi
 
 PATH=$PATH:$(pwd)
 
-bentoo template --tools tool_runners/tools_java.toml reality-check/benchmark > reality-check/benchmark/runs.toml
-bentoo bench --tools tool_runners/tools_java.toml --runs reality-check/benchmark/runs.toml --timeout 1200 reality-check-output
+bentoo template --tools tool_runners/tools_java.toml reality-check/java/benchmark > reality-check/java/benchmark/runs.toml
+bentoo bench --tools tool_runners/tools_java.toml --runs reality-check/java/benchmark/runs.toml --timeout 3600 reality-check-java-output
+./scripts/draw-benchamrk-summary-charts.py reality-check-java-output reality-check-java reality_check_java
+
