@@ -46,10 +46,13 @@ fi
   cd reality-check;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard 43b13da3322463b14f092d75b799e27f00518ba7
+    git reset --hard 95f33492a20b1fe29005998a4f27f5db2c794c90
   else
     git pull
   fi
 )
 
+(cd "$BASE_DIR"; ./scripts/benchmarks/reality-check/java/bootstrap.sh "$BOOTSTRAP_OPTIONS")
+(cd "$BASE_DIR"; ./scripts/benchmarks/reality-check/csharp/bootstrap.sh "$BOOTSTRAP_OPTIONS")
 (cd "$BASE_DIR"; ./scripts/benchmarks/reality-check/python/bootstrap.sh "$BOOTSTRAP_OPTIONS")
+(cd "$BASE_DIR"; ./scripts/benchmarks/reality-check/go/bootstrap.sh "$BOOTSTRAP_OPTIONS")
