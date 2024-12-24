@@ -39,16 +39,14 @@ fi
 cd "$BASE_DIR"
 
 if [ ! -d "python-owasp-converted-mutated" ]; then
-  git clone git@github.com:flawgarden/python-owasp-converted-mutated.git python-owasp-converted-mutated
+  git clone https://github.com/flawgarden/python-owasp-converted-mutated.git python-owasp-converted-mutated
 fi
 (
   cd python-owasp-converted-mutated;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard 87ddc19c5f25a25836c8f08b2a30c6f0317b76c9
+    git reset --hard 090f03acf998feb6d3333da4160c4c9a02ff3c85
   else
     git pull
   fi
 )
-
-(cd "$BASE_DIR"; cp -r markup/python-owasp-converted-mutated/* python-owasp-converted-mutated)
