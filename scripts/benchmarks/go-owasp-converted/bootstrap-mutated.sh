@@ -54,11 +54,10 @@ fi
   cd go-owasp-converted-mutated;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard aff6375b5d856bf1ad10134fe16199d21c75dec4
+    git reset --hard d6ff3b7df435c5dfa28b16006844dfeded9c11a8
   else
     git pull
   fi
 )
 
 (cd "$BASE_DIR"/go-owasp-converted-mutated; go mod edit -require=github.com/lestrrat-go/libxml2@v0.0.0-20240905100032-c934e3fcb9d3; go mod tidy; go build ./...)
-(cd "$BASE_DIR"; cp -r markup/go-owasp-converted-mutated/* go-owasp-converted-mutated)
