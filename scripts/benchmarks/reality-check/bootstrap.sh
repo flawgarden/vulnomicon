@@ -19,10 +19,12 @@ BASE_DIR="$(cd "$SCRIPT_DIR"/../../../ && pwd)"
 
 EXIT_ON_ERROR="false"
 UPDATE_BENCHMARKS="false"
+BOOTSTRAP_OPTIONS=""
 
 for OPT in "$@"; do
   if [[ "$OPT" = *"--exit-on-error"* ]]; then
       EXIT_ON_ERROR="true"
+      BOOTSTRAP_OPTIONS="$BOOTSTRAP_OPTIONS --exit-on-error"
       shift 1
   fi
   if [[ "$OPT" = *"--update"* ]]; then
@@ -44,10 +46,13 @@ fi
   cd reality-check;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard 1feceb93f505ade1ebed3ecf0f4bb3db514f6670
+    git reset --hard 95f33492a20b1fe29005998a4f27f5db2c794c90
   else
     git pull
   fi
 )
 
-(cd "$BASE_DIR"/reality-check; ./scripts/bootstrap.sh)
+(cd "$BASE_DIR"; ./scripts/benchmarks/reality-check/java/bootstrap.sh "$BOOTSTRAP_OPTIONS")
+(cd "$BASE_DIR"; ./scripts/benchmarks/reality-check/csharp/bootstrap.sh "$BOOTSTRAP_OPTIONS")
+(cd "$BASE_DIR"; ./scripts/benchmarks/reality-check/python/bootstrap.sh "$BOOTSTRAP_OPTIONS")
+(cd "$BASE_DIR"; ./scripts/benchmarks/reality-check/go/bootstrap.sh "$BOOTSTRAP_OPTIONS")
