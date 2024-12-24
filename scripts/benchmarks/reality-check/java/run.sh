@@ -48,4 +48,3 @@ PATH=$PATH:$(pwd)
 bentoo template --tools tool_runners/tools_java.toml reality-check/java/benchmark > reality-check/java/benchmark/runs.toml
 bentoo bench --tools tool_runners/tools_java.toml --runs reality-check/java/benchmark/runs.toml --timeout 3600 reality-check-java-output
 ./scripts/draw-benchamrk-summary-charts.py reality-check-java-output reality-check-java reality_check_java
-

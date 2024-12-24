@@ -26,4 +26,3 @@ PATH=$PATH:$(pwd)
 bentoo template --tools tool_runners/tools_python.toml reality-check/python/benchmark > reality-check/python/benchmark/runs.toml
 bentoo bench --tools tool_runners/tools_python.toml --runs reality-check/python/benchmark/runs.toml --timeout 3600 reality-check-python-output
 ./scripts/draw-benchamrk-summary-charts.py reality-check-python-output reality-check-python reality_check_python
-
