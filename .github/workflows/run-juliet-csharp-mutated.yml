@@ -1,0 +1,57 @@
+name: "Run JulietCSharp"
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'scripts/benchmarks/Juliet/csharp/bootstrap.sh'
+      - 'scripts/benchmarks/Juliet/csharp/run.sh'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'scripts/benchmarks/Juliet/csharp/bootstrap.sh'
+      - 'scripts/benchmarks/Juliet/csharp/run.sh'
+  workflow_dispatch:
+
+env:
+  BENTOO_SCRIPT: "./scripts/bentoo.sh"
+  BENCHMARK_NAME: "JulietCSharp"
+  RUN_BENCHMARK_SCRIPT: "./scripts/benchmarks/Juliet/csharp/run.sh"
+  RUN_BENCHMARK_OUTPUT: "JulietCSharp-output"
+  BOOTSTRAP_SCRIPT: "./scripts/benchmarks/Juliet/csharp/bootstrap.sh"
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+jobs:
+  reference_run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: LizardByte/setup-python-action@master
+      with:
+        python-version: '2.7'
+
+    - name: Install Python requirements
+      run: pip install -r ./requirements.txt
+
+    - name: Install tools needed for JulietCSharp download and run
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y -q --no-install-recommends \
+          unzip \
+          mono-xbuild
+
+    - name: Bootstrap
+      run: |
+        ${{ env.BOOTSTRAP_SCRIPT }} --exit-on-error
+        ${{ env.BENTOO_SCRIPT }}
+
+    - name: Reference run
+      shell: bash
+      run: ${{ env.RUN_BENCHMARK_SCRIPT }}
+
+    - name: Archive output
+      uses: actions/upload-artifact@v4
+      with:
+        name: "${{ env.BENCHMARK_NAME }}-output"
+        path: ${{ env.RUN_BENCHMARK_OUTPUT }}
