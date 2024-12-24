@@ -7,6 +7,7 @@
 /skf-labs*
 /go-test-bench*
 /go-sec-code*
+/python-owasp-converted*
 
 /scripts/benchmarks/skf-labs/python/metadata/
 /go-owasp-converted*
