@@ -27,9 +27,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Install Python requirements
-      run: pip install -r ./requirements.txt
-
     - name: Install libs needed for go-owasp-converted
       run: |
         sudo apt-get update
