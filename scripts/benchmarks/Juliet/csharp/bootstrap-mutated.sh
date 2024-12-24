@@ -49,8 +49,5 @@ fi
   fi
 )
 
-if [[ "$UPDATE_BENCHMARKS" = "true" ]]; then
-  (cd "$BASE_DIR"; ./scripts/benchmarks/FlowBlot/markup.py)
-fi
 (cd "$BASE_DIR"/JulietCSharp-mutated; ./create_single_project.py)
 (cd "$BASE_DIR"; cp -r markup/JulietCSharp-mutated/* JulietCSharp-mutated)
