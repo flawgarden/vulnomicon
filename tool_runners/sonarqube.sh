@@ -58,11 +58,11 @@ fi
 
 echo "Creating temporary SonarQube instance" >> /dev/stderr
 
-docker pull sonarqube:10.4.1-community > /dev/null
-docker pull sonarsource/sonar-scanner-cli > /dev/null
+docker pull sonarqube:lts-community >> /dev/stderr
+docker pull sonarsource/sonar-scanner-cli:latest >> /dev/stderr
 
 # start local sonarqube
-container_id=$(docker run --rm -d -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p "$sonar_port:9000" sonarqube:10.4.1-community) > /dev/null
+container_id=$(docker run --rm -d -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p "$sonar_port:9000" sonarqube:lts-community) >> /dev/stderr
 
 echo "Waiting for instance to come up" >> /dev/stderr
 
@@ -90,9 +90,9 @@ sonar_token=$(curl "$sonar_host/api/user_tokens/generate" --silent -u "$sonar_us
 echo "Starting scan (might take some time!)" >> /dev/stderr
 
 # run scan (using net=host to be able to connect to localhost sonarqube)
-docker run --env SONAR_SCANNER_OPTS=-Xmx4g --net=host --rm -v ~/.m2:/root/.m2 -v "$(pwd):/benchmark" -w "/benchmark" sonarsource/sonar-scanner-cli \
+docker run --env SONAR_SCANNER_OPTS=-Xmx4g --net=host --rm -v ~/.m2:/root/.m2 -v "$(pwd):/benchmark" -w "/benchmark" sonarsource/sonar-scanner-cli:latest \
   -Dsonar.java.binaries="." -Dsonar.scm.disabled="true" -Dsonar.projectKey="$sonar_project" -Dsonar.host.url="$sonar_host" -Dsonar.login="$sonar_token" \
-  -Dsonar.sources="." > /dev/null
+  -Dsonar.sources="." >> /dev/stderr
 
 echo "Waiting for SonarQube CE to finish task" >> /dev/stderr
 
