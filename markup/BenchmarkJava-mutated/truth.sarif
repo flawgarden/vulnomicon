@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json",
   "version": "2.1.0",
   "runs": [
     {
@@ -250,6 +250,22 @@
           ]
         },
         {
+          "kind": "pass",
+          "message": {
+            "text": "xss"
+          },
+          "ruleId": "CWE-79",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest012681631.java"
+                }
+              }
+            }
+          ]
+        },
+        {
           "kind": "fail",
           "message": {
             "text": "securecookie"
@@ -372,6 +388,22 @@
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest0252595.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "cmdi"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest012871563.java"
                 }
               }
             }
@@ -1228,6 +1260,38 @@
         {
           "kind": "pass",
           "message": {
+            "text": "xss"
+          },
+          "ruleId": "CWE-79",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest006441211.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "xss"
+          },
+          "ruleId": "CWE-79",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest001451711.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
             "text": "sqli"
           },
           "ruleId": "CWE-89",
@@ -1498,6 +1562,22 @@
           ]
         },
         {
+          "kind": "fail",
+          "message": {
+            "text": "trustbound"
+          },
+          "ruleId": "CWE-501",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest000041781.java"
+                }
+              }
+            }
+          ]
+        },
+        {
           "kind": "pass",
           "message": {
             "text": "sqli"
@@ -1524,6 +1604,22 @@
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest0076715.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "sqli"
+          },
+          "ruleId": "CWE-89",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest0000851.java"
                 }
               }
             }
@@ -1722,6 +1818,22 @@
           ]
         },
         {
+          "kind": "fail",
+          "message": {
+            "text": "trustbound"
+          },
+          "ruleId": "CWE-501",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest000981221.java"
+                }
+              }
+            }
+          ]
+        },
+        {
           "kind": "pass",
           "message": {
             "text": "ldapi"
@@ -1796,6 +1908,22 @@
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest02400142.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "trustbound"
+          },
+          "ruleId": "CWE-501",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest01204221.java"
                 }
               }
             }
@@ -2652,6 +2780,22 @@
         {
           "kind": "pass",
           "message": {
+            "text": "sqli"
+          },
+          "ruleId": "CWE-89",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest0000842.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
             "text": "trustbound"
           },
           "ruleId": "CWE-501",
@@ -2906,6 +3050,22 @@
           ]
         },
         {
+          "kind": "pass",
+          "message": {
+            "text": "sqli"
+          },
+          "ruleId": "CWE-89",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest0000843.java"
+                }
+              }
+            }
+          ]
+        },
+        {
           "kind": "fail",
           "message": {
             "text": "trustbound"
@@ -3148,6 +3308,22 @@
         {
           "kind": "fail",
           "message": {
+            "text": "sqli"
+          },
+          "ruleId": "CWE-89",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest0000841.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
             "text": "xpathi"
           },
           "ruleId": "CWE-643",
@@ -3332,6 +3508,22 @@
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest0083947.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "pathtraver"
+          },
+          "ruleId": "CWE-22",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest012321201.java"
                 }
               }
             }
@@ -3932,6 +4124,38 @@
         {
           "kind": "fail",
           "message": {
+            "text": "cmdi"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest012871561.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "cmdi"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest0017261.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
             "text": "sqli"
           },
           "ruleId": "CWE-89",
@@ -4186,6 +4410,22 @@
           ]
         },
         {
+          "kind": "pass",
+          "message": {
+            "text": "cmdi"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00015281.java"
+                }
+              }
+            }
+          ]
+        },
+        {
           "kind": "fail",
           "message": {
             "text": "xss"
@@ -4324,6 +4564,22 @@
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00607146.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "pass",
+          "message": {
+            "text": "cmdi"
+          },
+          "ruleId": "CWE-78",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest012871562.java"
                 }
               }
             }
@@ -4764,6 +5020,22 @@
         {
           "kind": "fail",
           "message": {
+            "text": "trustbound"
+          },
+          "ruleId": "CWE-501",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest000981223.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
             "text": "xss"
           },
           "ruleId": "CWE-79",
@@ -4868,6 +5140,22 @@
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest000081.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "trustbound"
+          },
+          "ruleId": "CWE-501",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest000981222.java"
                 }
               }
             }
@@ -5284,6 +5572,22 @@
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest0137593.java"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "fail",
+          "message": {
+            "text": "sqli"
+          },
+          "ruleId": "CWE-89",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00008171.java"
                 }
               }
             }
