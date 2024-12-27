@@ -55,14 +55,10 @@ fi
   cd BenchmarkJava-mutated;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard 58b320f22f224c6ba62be8494bb130e39d885036
+    git reset --hard b082d7879901babfdcaa14f72d603a29d3acb03b
   else
     git pull
   fi
 )
 
 (cd "$BASE_DIR"/BenchmarkJava-mutated; mvn compile)
-if [[ "$UPDATE_BENCHMARKS" = "true" ]]; then
-  (cd "$BASE_DIR"; ./scripts/benchmarks/BenchmarkJava/markup.py "BenchmarkJava-mutated" "BenchmarkJava-mutated-17" "flawgarden-BenchmarkJava-mutated-17")
-fi
-(cd "$BASE_DIR"; cp -r markup/BenchmarkJava-mutated-17/* BenchmarkJava-mutated)

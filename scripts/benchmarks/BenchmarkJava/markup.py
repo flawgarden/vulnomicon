@@ -28,7 +28,7 @@ def lines_number(file_path):
 
 def convert(owasp_root_path_str, name, markup_path_str):
     sarif_data_out = {
-        "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",  # noqa: B950
+        "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json",  # noqa: B950
         "version": "2.1.0",
         "runs": [{"tool": {"driver": {"name": name}}}],
     }
