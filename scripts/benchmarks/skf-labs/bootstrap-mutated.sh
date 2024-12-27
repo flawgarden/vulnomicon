@@ -45,10 +45,8 @@ fi
   cd skf-labs-mutated;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard 92b577a64613374f5e0e61f40e102450a1b6d5eb
+    git reset --hard 0c6b06e036c5b0f62ad82c171fc03eb3d45e1a1e
   else
     git pull
   fi
 )
-
-(cd "$BASE_DIR"; ./scripts/benchmarks/skf-labs/python/bootstrap-mutated.sh "$BOOTSTRAP_OPTIONS")
