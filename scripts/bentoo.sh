@@ -49,7 +49,7 @@ if [[ "$UPDATE_BENTOO" = "true" ]]; then
     tar -xf tool_runners.tar.gz
     rm tool_runners.tar.gz
 else
-    wget https://github.com/flawgarden/bentoo/releases/download/v0.0.2/$ARCHIVE_NAME
+    wget https://github.com/flawgarden/bentoo/releases/download/v0.0.3/$ARCHIVE_NAME
     tar -xf $ARCHIVE_NAME
     rm $ARCHIVE_NAME
 fi
