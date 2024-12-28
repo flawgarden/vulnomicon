@@ -45,7 +45,7 @@ fi
   cd python-owasp-converted-mutated;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard 090f03acf998feb6d3333da4160c4c9a02ff3c85
+    git reset --hard aca8d427dac0b0340a2b538e9a0f84e77d2b83b6
   else
     git pull
   fi
