@@ -43,11 +43,10 @@ fi
   cd JulietCSharp-mutated;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard 7914aaaa6ebf50bd95f587af0382ad296a1d287a
+    git reset --hard aceb7cf08042f8cb90ce11b426e2c85ab86118a3
   else
     git pull
   fi
 )
 
 (cd "$BASE_DIR"/JulietCSharp-mutated; ./create_single_project.py)
-(cd "$BASE_DIR"; cp -r markup/JulietCSharp-mutated/* JulietCSharp-mutated)
