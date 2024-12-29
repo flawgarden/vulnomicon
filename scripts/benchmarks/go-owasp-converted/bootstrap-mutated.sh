@@ -54,7 +54,7 @@ fi
   cd go-owasp-converted-mutated;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard d6ff3b7df435c5dfa28b16006844dfeded9c11a8
+    git reset --hard 57df70caba17d5e867b51cd0df17fd486b23990e
   else
     git pull
   fi
