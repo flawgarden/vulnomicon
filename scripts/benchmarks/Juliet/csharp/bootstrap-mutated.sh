@@ -43,7 +43,7 @@ fi
   cd JulietCSharp-mutated;
   git fetch;
   if [[ "$UPDATE_BENCHMARKS" = "false" ]]; then
-    git reset --hard aceb7cf08042f8cb90ce11b426e2c85ab86118a3
+    git reset --hard ee71c6caed8de63d6b09e0f2a69db7b6e5a23686
   else
     git pull
   fi
