@@ -27,6 +27,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - uses: LizardByte/setup-python-action@master
+      with:
+        python-version: '2.7'
+
     - name: Install Python requirements
       run: pip install -r ./requirements.txt
 
@@ -41,6 +45,13 @@ jobs:
       run: |
         ${{ env.BOOTSTRAP_SCRIPT }} --exit-on-error
         ${{ env.BENTOO_SCRIPT }}
+
+    - uses: LizardByte/setup-python-action@master
+      with:
+        python-version: '3.10'
+
+    - name: Install Python requirements
+      run: pip install -r ./requirements.txt
 
     - name: Reference run
       shell: bash

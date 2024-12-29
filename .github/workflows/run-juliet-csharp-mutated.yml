@@ -1,0 +1,51 @@
+name: "Run JulietCSharp-mutated"
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'scripts/benchmarks/Juliet/csharp/bootstrap-mutated.sh'
+      - 'scripts/benchmarks/Juliet/csharp/run-mutated.sh'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'scripts/benchmarks/Juliet/csharp/bootstrap-mutated.sh'
+      - 'scripts/benchmarks/Juliet/csharp/run-mutated.sh'
+  workflow_dispatch:
+
+env:
+  BENTOO_SCRIPT: "./scripts/bentoo.sh"
+  BENCHMARK_NAME: "JulietCSharp-mutated"
+  RUN_BENCHMARK_SCRIPT: "./scripts/benchmarks/Juliet/csharp/run-mutated.sh"
+  RUN_BENCHMARK_OUTPUT: "JulietCSharp-mutated-output"
+  BOOTSTRAP_SCRIPT: "./scripts/benchmarks/Juliet/csharp/bootstrap-mutated.sh"
+  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+jobs:
+  reference_run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install Python requirements
+      run: pip install -r ./requirements.txt
+
+    - name: Install .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Bootstrap
+      run: |
+        ${{ env.BOOTSTRAP_SCRIPT }} --exit-on-error
+        ${{ env.BENTOO_SCRIPT }}
+
+    - name: Reference run
+      shell: bash
+      run: ${{ env.RUN_BENCHMARK_SCRIPT }}
+
+    - name: Archive output
+      uses: actions/upload-artifact@v4
+      with:
+        name: "${{ env.BENCHMARK_NAME }}-output"
+        path: ${{ env.RUN_BENCHMARK_OUTPUT }}

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 #
 #   Based on create_per_cwe_files.py from the original Juliet package
