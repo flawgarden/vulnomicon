@@ -35,18 +35,18 @@ pip install -r requirements.txt
 And then run `./bootstrap.sh`.
 
 The bootstrap script will:
-* Download, compile and provide ground truth files for all the benchmarks.
+* Download, compile, and provide ground truth files for all the benchmarks.
 * Download the `bentoo` SAST benchmarking tool.
 
 After the bootstrapping is complete, you can run reference tools on the benchmarks by executing the following scripts:
-* `scripts/benchmarks/*benchmark-name*/run.sh` - to run the tools on the benchmark with the name `benchmark-name`
-* `scripts/benchmarks/*benchmark-name*/run-mutated.sh` - to run the tools on the mutated version of the benchmark with the name `benchmark-name`
+* `scripts/benchmarks/*benchmark-name*/run.sh` - to run the tools on the benchmark with the name `benchmark-name`;
+* `scripts/benchmarks/*benchmark-name*/run-mutated.sh` - to run the tools on the mutated benchmark version with the name `benchmark-name`.
 
 The run results will accordingly appear in the `benchmark-name-output` or `benchmark-name-mutated-output` directories.
 
 If you want to tinker with what tools run on what benchmarks (e.g., to run your tool on a subset of `reality-check`),
 please consult the [`bentoo` documentation](https://github.com/flawgarden/bentoo).
 
-For now, **vulnomicon** contains benchmarks for Java, C#, Go, and Python.
+For now, **vulnomicon** contains Java, C#, Go, and Python benchmarks.
 
-Almost all the benchmarks have the [workflows](https://github.com/flawgarden/vulnomicon/tree/main/.github/workflows) to run them on CI.
+Almost all the benchmarks have the [workflows](https://github.com/flawgarden/vulnomicon/tree/main/.github/workflows) to run on CI.
