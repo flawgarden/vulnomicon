@@ -27,7 +27,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - uses: LizardByte/setup-python-action@master
+    - uses: LizardByte/actions/actions/setup_python@master
       with:
         python-version: '2.7'
 
@@ -46,7 +46,7 @@ jobs:
         ${{ env.BOOTSTRAP_SCRIPT }} --exit-on-error
         ${{ env.BENTOO_SCRIPT }}
 
-    - uses: LizardByte/setup-python-action@master
+    - uses: LizardByte/actions/actions/setup_python@master
       with:
         python-version: '3.10'
 
