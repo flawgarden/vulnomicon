@@ -1,0 +1,9 @@
+[[tools]]
+script = "codeql-nodocker.sh"
+name = "CodeQL"
+parse_command = { command = "bentoo", args = "convert codeql" }
+
+[[tools.configs]]
+name = "Java"
+args = "--tech java"
+

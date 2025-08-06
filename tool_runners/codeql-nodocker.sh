@@ -44,7 +44,7 @@ else
     if ! [ -f "$HOME"/.bentoo/codeql/codeql ]; then
         echo "Downloading CodeQL" >&2
         rm -f codeql-bundle-linux64.tar.gz
-        wget "https://github.com/github/codeql-action/releases/download/codeql-bundle-v2.18.4/codeql-bundle-linux64.tar.gz" >&2
+        wget "https://github.com/github/codeql-action/releases/download/codeql-bundle-v2.22.2/codeql-bundle-linux64.tar.gz" >&2
         mkdir -p "$HOME"/.bentoo >&2
         tar -xvzf codeql-bundle-linux64.tar.gz --directory "$HOME"/.bentoo/ >&2
         rm codeql-bundle-linux64.tar.gz >&2
